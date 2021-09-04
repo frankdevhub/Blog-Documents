@@ -3,7 +3,7 @@
 # @author: frankdevhub
 # @contact: frankdevhub@gmail.com
 # @blog: http://blog.frankdevhub.site
-# @file: pymysql_test.py
+# @file: test_pymysql.py
 # @time: 2021/2/11 22:39
 # @desc: 测试pymsql数据持久化
 
@@ -26,7 +26,7 @@ class DbConfig:
         self._host = "127.0.0.1"  # 数据源连接地址
         self._username = "root"  # 数据源连接用户名
         self._password = "Fxmf7fa@0806"  # 数据源连接密码
-        self._db = "51job_data_center"  # 数据库名称
+        self._db = ""  # 数据库名称
         self._port = 3306  # 端口号
 
     @property

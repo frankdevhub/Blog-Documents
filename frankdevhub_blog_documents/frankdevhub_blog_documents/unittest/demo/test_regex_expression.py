@@ -3,12 +3,15 @@
 # @author: frankdevhub
 # @contact: frankdevhub@gmail.com
 # @blog: http://blog.frankdevhub.site
-# @file: regex_expression_test.py
+# @file: test_regex_expression.py
 # @time: 2021/2/13 12:24
 # @desc: 解析匹配的正则表达式测试
 
+import logging as log
 import re
 import unittest
+
+log.basicConfig(level=log.DEBUG)
 
 """企业岗位招聘人数的正则表达式 eg:(招1人)"""
 HEAD_COUNT_REGEX = """
@@ -18,11 +21,11 @@ HEAD_COUNT_REGEX = """
 TEST_HEAD_COUNT = "招 23 人"
 
 
-class RegexExpressionTest(unittest.TestCase):
+class TestRegexExpression(unittest.TestCase):
 
     @staticmethod
     def test_match_head_count():
-        print('invoke match_head_count')
+        log.debug('invoke method -> test_match_head_count()')
         matched = re.match(HEAD_COUNT_REGEX, TEST_HEAD_COUNT, re.M | re.I)
         if matched:
             print("prefix :", matched.group('prefix'))
