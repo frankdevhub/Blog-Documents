@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 """
-@File ：dicts.py
+@File ：constants.py
 @Author ：frankdevhub@gmail.com
 @Blog : http://blog.frankdevhub.site
-@Date ：2021/2/24 18:34
+@Date ：2021/9/4 18:34
 """
 
 
@@ -20,6 +20,11 @@ class Xpath:
     ATTRIBUTE_HREF = "href"
     ATTRIBUTE_CLASS = "class"
     ATTRIBUTE_VALUE = "value"
+
+
+class WebLinks:
+    """网络资源相关链接地址"""
+    BAI_DU = "https://www.baidu.com"  # 百度首页地址
 
 
 class BusinessConstants:

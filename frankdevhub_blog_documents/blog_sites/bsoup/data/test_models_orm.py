@@ -4,14 +4,14 @@
 @File ：test_models_orm.py
 @Author ：frankdevhub@gmail.com
 @Blog : http://blog.frankdevhub.site
-@Date ：2021/3/12 22:53
+@Date ：2021/9/4 17:15
 """
 
 import logging as log
 import unittest
 
-from frankdevhub_51job_api.bsoup.data.models import *
-from frankdevhub_51job_api.bsoup.data.models_orm import *
+from ..data.models import *
+from ..data.models_orm import *
 
 log.basicConfig(level=log.DEBUG)
 
