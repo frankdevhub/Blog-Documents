@@ -47,7 +47,7 @@ class TestBeautifulSoup(unittest.TestCase):
 
     @staticmethod
     def test_51cto_blog_example():
-        """测获取职位信息对应企业的介绍信息"""
+        """测试抓取博客网页文本html原始内容"""
         log.debug('invoke method -> test_51cto_blog_example()')
         response = requests.get(url=test_51cto_blog_example, headers=test_headers)
         page_context = response.text
