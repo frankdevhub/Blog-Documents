@@ -21,6 +21,7 @@ test_headers = {
 }
 
 test_51cto_blog_example = "https://blog.51cto.com/oldboy"  # https://blog.51cto.com/oldboy
+test_51cto_docs_list_xpath = "//div[@class='common-article-list']"  # //div[@class="common-article-list"]
 
 
 class TestBeautifulSoup(unittest.TestCase):
@@ -46,8 +47,14 @@ class TestBeautifulSoup(unittest.TestCase):
         # log.debug(soup.prettify())
 
     @staticmethod
-    def test_51cto_blog_example():
-        """测试抓取博客网页文本html原始内容"""
+    def test_51cto_blog_example() -> etree:
+        """
+        测试抓取博客网页文本html原始内容
+        eg:
+        input: https://blog.51cto.com/oldboy
+        @return: 页面对象Html源文档对象内容
+        @rtype: tree
+        """
         log.debug('invoke method -> test_51cto_blog_example()')
         response = requests.get(url=test_51cto_blog_example, headers=test_headers)
         page_context = response.text
@@ -55,11 +62,34 @@ class TestBeautifulSoup(unittest.TestCase):
 
         tree = etree.HTML(page_context)
         assert tree is not None, 'xml tree cannot be empty'
+        log.debug(type(tree))
+        return tree
+
+    @staticmethod
+    def test_51cto_get_page_docs():
+        """
+        测试抓取博客网页对象中的博文列表对象
+        eg:
+        input: https://blog.51cto.com/oldboy
+        @return: 页面对象中的博文列表对象
+        @rtype: list
+        """
+        log.debug('invoke method -> test_51cto_get_page_docs()')
+        docs_xpath = test_51cto_docs_list_xpath
+        log.debug(f'using xpath = {str(docs_xpath)}')
+        docs_tree = test_51cto_blog_example()
+
+        page_docs = docs_tree.xpath(docs_xpath)
+        assert page_docs is not None, 'page_docs cannot be found'
+        log.debug(f'page_docs size = {len(page_docs)}')
+
+        return
 
 
 if __name__ == '__main__':
     test_suite = unittest.TestSuite()
-    test_suite.addTest(TestBeautifulSoup('test_local'))  # test_local
-    test_suite.addTest(TestBeautifulSoup('test_51cto_blog_example'))  # test_51cto_blog_example
+    # test_suite.addTest(TestBeautifulSoup('test_local'))  # test_local
+    # test_suite.addTest(TestBeautifulSoup('test_51cto_blog_example'))  # test_51cto_blog_example
+    test_suite.addTest(TestBeautifulSoup('test_51cto_get_page_docs'))  # test_51cto_get_page_docs
     runner = unittest.TextTestRunner()
     runner.run(test_suite)

@@ -25,6 +25,7 @@ class Xpath:
 class WebLinks:
     """网络资源相关链接地址"""
     BAI_DU = "https://www.baidu.com"  # 百度首页地址
+    BLOG_EXAMPLE_1 = "https://blog.51cto.com/oldboy"  # 51CTO博客站点实例(https://blog.51cto.com/oldboy)
 
 
 class BusinessConstants:

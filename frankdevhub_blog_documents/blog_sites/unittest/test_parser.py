@@ -23,6 +23,7 @@ class TestParser(unittest.TestCase):
     12000-15000/月, 默认各位不显示单位的区间范围
     23.0-334.98, 默认没有任何单位显示的区间范围
     """
+
     range_texts = ['2-3万/月', '2——7万/年', '23.9-3万/月', '12000-15000/月', '23.0-334.98']
 
     def test_parse_salary_text(self):
