@@ -14,9 +14,9 @@ from functools import wraps
 
 import requests
 
-from frankdevhub_51job_api.bsoup.platform import parser
-from frankdevhub_51job_api.dicts.constants import BusinessConstants
-from job_api.error.errors import BusinessError
+from ..dicts.constants import BusinessConstants
+from ..error.errors import BusinessError
+from ..platform import parser
 
 log.basicConfig(level=log.INFO)
 
@@ -62,10 +62,7 @@ def get_index(m, is_next: bool):
     获取页面链接中的页数相关的字段
      eg:
        input:
-       matched_url = https://search.51job.com/list/020000,000000,0000,00,9,99,java,2,1.html?
-                      lang=c&postchannel=0000&workyear=99&cotype=99&degreefrom=99&
-                      jobterm=99&companysize=99&ord_field=0&dibiaoid=0&line=&welfare=
-       is_next = True
+
        output = 2
     @param m: 正则返回的匹配结果集合
     @param is_next: 是否下一页, 是 = True 否 = False
@@ -90,12 +87,6 @@ def get_previous_page(url_link: str) -> str:
     """
     获取上一页链接地址
     eg:
-       input = https://search.51job.com/list/020000,000000,0000,00,9,99,java,2,1.html?
-               lang=c&postchannel=0000&workyear=99&cotype=99&degreefrom=99&
-               jobterm=99&companysize=99&ord_field=0&dibiaoid=0&line=&welfare=
-       output = https://search.51job.com/list/020000,000000,0000,00,9,99,java,2,0.html?
-                lang=c&postchannel=0000&workyear=99&cotype=99&degreefrom=99&
-                jobterm=99&companysize=99&ord_field=0&dibiaoid=0&line=&welfare=
 
     @param url_link: 当前页面的链接地址
     @return: 上一页链接地址
@@ -119,12 +110,6 @@ def get_next_page(url_link: str) -> str:
     """
     获取上一页链接地址
     eg:
-       input = https://search.51job.com/list/020000,000000,0000,00,9,99,java,2,1.html?
-               lang=c&postchannel=0000&workyear=99&cotype=99&degreefrom=99&
-               jobterm=99&companysize=99&ord_field=0&dibiaoid=0&line=&welfare=
-       output = https://search.51job.com/list/020000,000000,0000,00,9,99,java,2,2.html?
-                lang=c&postchannel=0000&workyear=99&cotype=99&degreefrom=99&
-                jobterm=99&companysize=99&ord_field=0&dibiaoid=0&line=&welfare=
 
     @param url_link: 当前页面的链接地址
     @return: 下一页链接地址
@@ -148,10 +133,7 @@ def get_search_keyword(url_link: str) -> str:
     """
     获取搜索链接中的职位搜索关键字
     eg:
-       input = https://search.51job.com/list/020000,000000,0000,00,9,99,java,2,1.html?
-               lang=c&postchannel=0000&workyear=99&cotype=99&degreefrom=99&
-               jobterm=99&companysize=99&ord_field=0&dibiaoid=0&line=&welfare=
-       output = java
+
 
     @param url_link: 当前页面的链接地址
     @return: 链接中的搜索关键字
@@ -175,8 +157,6 @@ def get_page_union_id(url_link: str) -> str:
     """
     获取页面链接中的唯一标识
     eg:
-       input = https://jobs.51job.com/shanghai-ptq/121842092.html?s=sou_sou_soulb&t=1
-       output = 121842092
 
     @param url_link: 页面链接
     @return: 页面链接中的唯一标识

@@ -9,7 +9,7 @@
 import logging as log
 import unittest
 
-from frankdevhub_51job_api.bsoup.platform.page import *
+from frankdevhub_blog_documents.blog_sites.bsoup.platform.page import *
 
 log.basicConfig(level=log.DEBUG)
 
