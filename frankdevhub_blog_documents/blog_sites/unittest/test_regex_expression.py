@@ -46,8 +46,8 @@ class TestRegexExpression(unittest.TestCase):
         log.debug('invoke method -> test_match_head_count()')
         matched = re.match(HEAD_COUNT_REGEX, TEST_HEAD_COUNT, re.M | re.I)
         if matched:
-            print("prefix :", matched.group('prefix'))  # prefix 招聘预算的动作词片前缀,如:"招聘","招募","招"
-            print("numeric :", matched.group('numeric'))  # numeric 招聘预算的人数
+            print("prefix :", matched.group('prefix'))  # prefix
+            print("numeric :", matched.group('numeric'))  # numeric
         else:
             print('not matched')
 
@@ -56,7 +56,7 @@ class TestRegexExpression(unittest.TestCase):
         log.debug('invoke method -> test_match_blog_union_id()')
         matched = re.match(BLOG_DOC_ID_REGEX, TEST_BLOG_DOC_LINK, re.M | re.I)
         if matched:
-            print("union id :", matched.group('union_id'))  # union_id 博客文档链接唯一识别号
+            print("union id :", matched.group('union_id'))
         else:
             print('not matched')
 
