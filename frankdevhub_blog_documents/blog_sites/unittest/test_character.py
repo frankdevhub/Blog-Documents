@@ -63,5 +63,5 @@ if __name__ == '__main__':
     test_suite = unittest.TestSuite()
     test_suite.addTest(TestCharacterHelper('test_is_simple_chinese_character'))  # test_is_simple_chinese_character
     test_suite.addTest(TestCharacterHelper('test_get_instance_methods'))  # test_get_instance_methods
-    runners = unittest.TextTestRunner()
-    runners.run(test_suite)
+    runner = unittest.TextTestRunner()
+    runner.run(test_suite)

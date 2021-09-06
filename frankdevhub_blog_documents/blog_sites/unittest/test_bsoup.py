@@ -77,8 +77,12 @@ class TestBeautifulSoup(unittest.TestCase):
         log.debug('invoke method -> test_51cto_get_page_docs()')
         docs_xpath = test_51cto_docs_list_xpath
         log.debug(f'using xpath = {str(docs_xpath)}')
-        docs_tree = test_51cto_blog_example()
+        # docs_tree = test_51cto_blog_example()
+        response = requests.get(url=test_51cto_blog_example, headers=test_headers)
+        page_context = response.text
+        docs_tree = etree.HTML(page_context)
 
+        assert docs_tree is not None, 'xml tree cannot be empty'
         page_docs = docs_tree.xpath(docs_xpath)
         assert page_docs is not None, 'page_docs cannot be found'
         log.debug(f'page_docs size = {len(page_docs)}')
