@@ -45,5 +45,5 @@ class BusinessConstants:
 
 #
 # if __name__ == '__main__':
-#     url_link = BusinessConstants.JOB_PLATFORM_HOMEPAGE_SH
+#     url_link = BusinessConstants.BLOG_EXAMPLE_1
 #     print(url_link)
