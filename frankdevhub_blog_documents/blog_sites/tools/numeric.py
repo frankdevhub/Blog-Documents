@@ -6,11 +6,12 @@
 @Blog : http://blog.frankdevhub.site
 @Date ：2021/2/18 14:51
 """
+
 import inspect
 import logging as log
 from enum import Enum
 
-from frankdevhub_51job_api.tools.character import CharacterHelper
+from .character import CharacterHelper
 
 log.basicConfig(level=log.INFO)
 
