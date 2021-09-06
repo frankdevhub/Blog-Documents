@@ -24,7 +24,9 @@ eg:
    input = https://blog.51cto.com/oldboy/1926142 
    output = 1926142 
 """
-BLOG_DOC_ID_REGEX = """sss"""
+BLOG_DOC_ID_REGEX = """
+(/http[s]{0,1}:\/\/([\w.]+\/?)\S*/)(?P<union_id>[0-9]+)$
+"""
 TEST_BLOG_DOC_LINK = "https://blog.51cto.com/oldboy/1926142"
 TEST_BLOG_DOC_LINKS = ["https://blog.51cto.com/oldboy/1926142", "https://blog.51cto.com/oldboy/1884326",
                        "https://blog.51cto.com/oldboy/1855640", "https://blog.51cto.com/oldboy/775056",
@@ -44,15 +46,19 @@ class TestRegexExpression(unittest.TestCase):
         log.debug('invoke method -> test_match_head_count()')
         matched = re.match(HEAD_COUNT_REGEX, TEST_HEAD_COUNT, re.M | re.I)
         if matched:
-            print("prefix :", matched.group('prefix'))
+            print("prefix :", matched.group('prefix'))  # prefix
+            print("numeric :", matched.group('numeric'))  # numeric
         else:
-            print('no matched')
+            print('not matched')
 
     @staticmethod
     def test_match_blog_union_id():
         log.debug('invoke method -> test_match_blog_union_id()')
-
-    pass
+        matched = re.match(BLOG_DOC_ID_REGEX, TEST_BLOG_DOC_LINK, re.M | re.I)
+        if matched:
+            print("union id :", matched.group('union_id'))
+        else:
+            print('not matched')
 
 
 if __name__ == "__main__":
