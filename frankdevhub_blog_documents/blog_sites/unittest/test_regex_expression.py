@@ -24,9 +24,12 @@ eg:
    input = https://blog.51cto.com/oldboy/1926142 
    output = 1926142 
 """
-BLOG_DOC_ID_REGEX = """
-(/http[s]{0,1}:\/\/([\w.]+\/?)\S*/)(?P<union_id>[0-9]+)$
+BLOG_DOC_ID_REGEX1 = """
+.*(?P<header>/http[s]{0,1}:\/\/([\w.]+\/?)\S*/)(?P<union>[0-9]+)$
 """
+
+BLOG_DOC_ID_REGEX = "(oldboy)"
+
 TEST_BLOG_DOC_LINK = "https://blog.51cto.com/oldboy/1926142"
 TEST_BLOG_DOC_LINKS = ["https://blog.51cto.com/oldboy/1926142", "https://blog.51cto.com/oldboy/1884326",
                        "https://blog.51cto.com/oldboy/1855640", "https://blog.51cto.com/oldboy/775056",
@@ -46,24 +49,39 @@ class TestRegexExpression(unittest.TestCase):
         log.debug('invoke method -> test_match_head_count()')
         matched = re.match(HEAD_COUNT_REGEX, TEST_HEAD_COUNT, re.M | re.I)
         if matched:
-            print("prefix :", matched.group('prefix'))  # prefix
-            print("numeric :", matched.group('numeric'))  # numeric
+            log.debug(f'prefix : {matched.group("prefix")}')  # prefix
+            log.debug(f'numeric : {matched.group("numeric")}')  # numeric
         else:
-            print('not matched')
+            log.debug('not matched')
 
     @staticmethod
     def test_match_blog_union_id():
+        """
+        测试正则表达式匹配博客文章链接的唯一标识
+        eg:
+           input = "https://blog.51cto.com/oldboy/1189530"
+           output = 1189530(文档唯一识别号)
+        """
         log.debug('invoke method -> test_match_blog_union_id()')
-        matched = re.match(BLOG_DOC_ID_REGEX, TEST_BLOG_DOC_LINK, re.M | re.I)
+        matched = re.match(r'51cto', TEST_BLOG_DOC_LINK, re.I | re.M)
         if matched:
-            print("union id :", matched.group('union_id'))
+            print(matched.group())
+            log.debug(f'union id : {matched.group("union_id")}')  # union_id
         else:
-            print('not matched')
+            log.debug('not matched')
+
+    @staticmethod
+    def test_match_blog_union_ids():
+        """测试逐个匹配51cto博客测试链接集合,匹配博文的唯一标识"""
+        for link in TEST_BLOG_DOC_LINKS:
+            print(link)
+        pass
 
 
 if __name__ == "__main__":
     testunit = unittest.TestSuite()
-    testunit.add(TestRegexExpression("test_match_head_count"))  # test_match_head_count
-    testunit.add(TestRegexExpression("test_match_blog_union_id"))  # test_match_blog_union_id
+    testunit.addTest(TestRegexExpression("test_match_head_count"))  # test_match_head_count
+    testunit.addTest(TestRegexExpression("test_match_blog_union_id"))  # test_match_blog_union_id
+    testunit.addTest(TestRegexExpression("test_match_blog_union_ids"))  # test_match_blog_union_ids
     runner = unittest.TextTestRunner()
     runner.run(testunit)

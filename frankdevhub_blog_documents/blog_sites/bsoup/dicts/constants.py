@@ -14,6 +14,10 @@ class Xpath:
       web element attribute name
       页面对象常用属性参数
     """
+
+    def __init__(self):
+        pass
+
     ATTRIBUTE_NAME = "name"
     ATTRIBUTE_TITLE = "title"
     ATTRIBUTE_TARGET = "target"
@@ -24,13 +28,21 @@ class Xpath:
 
 class WebLinks:
     """网络资源相关链接地址"""
+
+    def __init__(self):
+        pass
+
     BAI_DU = "https://www.baidu.com"  # 百度首页地址
     BLOG_EXAMPLE_1 = "https://blog.51cto.com/oldboy"  # 51CTO博客站点实例(https://blog.51cto.com/oldboy)
 
 
 class BusinessConstants:
     """业务常用字段"""
+
     # 接口规范常用字段
+    def __init__(self):
+        pass
+
     SUCCESS = "success"  # 返回成功
     # selenium configuration
     SELENIUM_CACHE_ROOT_NULL = "selenium cache root directory path should not be null"  # 驱动缓存路径配置不存在
