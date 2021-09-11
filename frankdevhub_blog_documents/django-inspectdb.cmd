@@ -1,1 +1,0 @@
-python manage.py inspectdb --database blog_documents 51cto_blog_docs_brief > models.py new_inspect_model
