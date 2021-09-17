@@ -10,7 +10,7 @@ import inspect
 import logging as log
 import unittest
 
-from frankdevhub_blog_documents.blog_sites.tools.numeric import NumericUnit
+from ..tools.numeric import NumericUnit
 
 log.basicConfig(level=log.DEBUG)
 
