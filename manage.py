@@ -3,8 +3,11 @@
 import os
 import sys
 
+import pymysql
+
 
 def main():
+    pymysql.install_as_MySQLdb()
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'frankdevhub_blog_documents.settings')
     try:

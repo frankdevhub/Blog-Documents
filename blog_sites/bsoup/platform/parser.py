@@ -103,8 +103,3 @@ def is_unit_by_year(text: str) -> bool:
         return True
     else:
         return False
-
-
-
-
-
