@@ -8,7 +8,7 @@
 from django.db import models
 
 
-class 51CtoBlogDocsBrief(models.Model):
+class BlogDocumentBrief(models.Model):
     id = models.BigAutoField(primary_key=True)
     blog_domain = models.CharField(max_length=255, blank=True, null=True)
     doc_title = models.CharField(max_length=100, blank=True, null=True)
