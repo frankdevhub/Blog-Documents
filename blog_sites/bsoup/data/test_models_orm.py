@@ -10,21 +10,35 @@
 import logging as log
 import unittest
 
-from ..data.models import *
+from ..data.sqlacodegen_models import *
 from ..data.sqlalchemy_orm import *
 
 log.basicConfig(level=log.DEBUG)
 
+
 class TestModelORM(unittest.TestCase):
 
-    def test_get_session(self):
-        log.debug('invoke method -> test_get_session()')
-        session = get_session()
-        log.debug(f'session = {session}')
-        assert session is not None, f'session cannot be empty'
+    # def test_get_session(self):
+    #     log.debug('invoke method -> test_get_session()')
+    #     assert session is not None, f'variable session cannot be none'
+    #     session = get_session()
+    #
+    #     log.debug(f'session = {session}')
+
+    def test_add_object(self):
+        log.debug('invoke method -> test_add_object()')
+        blog_doc = BlogDocumentBrief(blog_domain='https://cloud.51cto.com/art/202109/684220.htm')
+        Session = get_session()
+        db_session = Session()
+        assert db_session is not None, f'variable session cannot be none'
+        ##
+        db_session.add_all([blog_doc])
+        db_session.commit()
+
 
 if __name__ == '__main__':
     test_suite = unittest.TestSuite()
-    test_suite.addTest(TestModelORM('test_get_session'))  # test_get_session
+    # test_suite.addTest(TestModelORM('test_get_session'))  # test_get_session
+    test_suite.addTest(TestModelORM('test_add_object'))  # test_add_object
     runner = unittest.TextTestRunner()
     runner.run(test_suite)
