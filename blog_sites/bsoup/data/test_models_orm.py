@@ -9,6 +9,7 @@
 
 import logging as log
 import unittest
+
 from ..data.models import *
 from ..data.sqlalchemy_orm import *
 
@@ -21,7 +22,6 @@ class TestModelORM(unittest.TestCase):
         session = get_session()
         log.debug(f'session = {session}')
         assert session is not None, f'session cannot be empty'
-
 
 if __name__ == '__main__':
     test_suite = unittest.TestSuite()

@@ -7,7 +7,7 @@ Base = declarative_base()
 metadata = Base.metadata
 
 
-class 51ctoBlogDocsBrief(Base):
+class BlogDocumentBrief(Base):
     __tablename__ = '51cto_blog_docs_brief'
     __table_args__ = {'comment': '51CTO-博客文档列表内容'}
 
