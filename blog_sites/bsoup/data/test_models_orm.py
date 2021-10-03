@@ -10,7 +10,7 @@
 import logging as log
 import unittest
 from ..data.models import *
-from ..data.models_orm import *
+from ..data.sqlalchemy_orm import *
 
 log.basicConfig(level=log.DEBUG)
 

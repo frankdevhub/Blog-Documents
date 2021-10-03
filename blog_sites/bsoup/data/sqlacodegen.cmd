@@ -1,1 +1,0 @@
-sqlacodegen mysql+mysqlconnector://root:root@admin@localhost:3306/blog_documents --outfile gen.py
