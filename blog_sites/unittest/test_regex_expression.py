@@ -29,7 +29,6 @@ BLOG_DOC_ID_REGEX1 = """
 """
 
 BLOG_DOC_ID_REGEX = "(oldboy)"
-
 TEST_BLOG_DOC_LINK = "https://blog.51cto.com/oldboy/1926142"
 TEST_BLOG_DOC_LINKS = ["https://blog.51cto.com/oldboy/1926142", "https://blog.51cto.com/oldboy/1884326",
                        "https://blog.51cto.com/oldboy/1855640", "https://blog.51cto.com/oldboy/775056",
