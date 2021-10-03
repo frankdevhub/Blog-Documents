@@ -14,12 +14,10 @@ from bs4 import BeautifulSoup
 from lxml import etree
 
 log.basicConfig(level=log.DEBUG)
-
 test_headers = {
     'Connection': 'close',
     'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'
 }
-
 test_51cto_blog_example = "https://blog.51cto.com/oldboy"  # https://blog.51cto.com/oldboy
 test_51cto_docs_list_xpath = "//div[@class='common-article-list']"  # //div[@class="common-article-list"]
 
@@ -85,7 +83,6 @@ class TestBeautifulSoup(unittest.TestCase):
         page_docs = docs_tree.xpath(docs_xpath)
         assert page_docs is not None, 'page_docs cannot be found'
         log.debug(f'page_docs size = {len(page_docs)}')
-
         return
 
 if __name__ == '__main__':
