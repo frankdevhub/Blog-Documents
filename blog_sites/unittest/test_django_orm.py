@@ -19,7 +19,6 @@ django.setup()
 
 log.basicConfig(level=log.DEBUG)
 
-
 class DjangoORMTest(unittest.TestCase):
 
     @staticmethod
@@ -27,7 +26,6 @@ class DjangoORMTest(unittest.TestCase):
         log.debug('invoke method -> test_insert()')
         obj = BlogDocumentBrief('', 'blog_domain', 'doc_title')
         obj.save()
-
 
 if __name__ == '__main__':
     testunit = unittest.TestSuite()
