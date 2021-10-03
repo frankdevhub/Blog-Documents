@@ -9,7 +9,6 @@
 
 from enum import Enum, unique
 
-
 @unique
 class EducationDegree(Enum):
     """教育学历文化水平"""
@@ -19,7 +18,6 @@ class EducationDegree(Enum):
         instance.name = args['name']  # 学历中文名称
         instance.code = args['code']  # 学历英文代码
         return instance
-
 
 DOCTOR = {'name': '博士', 'code': 'doctor'}
 MASTER = {'name': '硕士研究生', 'code': 'master'}

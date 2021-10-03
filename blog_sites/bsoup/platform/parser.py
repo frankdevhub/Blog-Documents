@@ -16,7 +16,6 @@ log.basicConfig(level=log.INFO)
 
 __all__ = ['parse_salary_text', 'convert_context', 'convert_data']
 
-
 def is_unit_by_thousand(text: str) -> bool:
     """
     是否是以千为计量单位
@@ -33,7 +32,6 @@ def is_unit_by_thousand(text: str) -> bool:
         return True
     else:
         return False
-
 
 def is_unit_by_ten_thousand(text: str) -> bool:
     """
@@ -54,7 +52,6 @@ def is_unit_by_ten_thousand(text: str) -> bool:
     else:
         return False
 
-
 def is_unit_by_day(text: str) -> bool:
     """
     是否是以天为计量单位
@@ -72,7 +69,6 @@ def is_unit_by_day(text: str) -> bool:
     else:
         return False
 
-
 def is_unit_by_month(text: str) -> bool:
     """
     是否是以月为计量单位
@@ -89,7 +85,6 @@ def is_unit_by_month(text: str) -> bool:
         return True
     else:
         return False
-
 
 def is_unit_by_year(text: str) -> bool:
     """是否是以年为计量单位"""

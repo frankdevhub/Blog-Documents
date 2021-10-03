@@ -9,7 +9,6 @@
 
 from enum import Enum, unique
 
-
 @unique
 class CharacterEncode(Enum):
     """通用国际字符编码"""

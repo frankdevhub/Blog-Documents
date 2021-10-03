@@ -23,7 +23,6 @@ test_headers = {
 test_51cto_blog_example = "https://blog.51cto.com/oldboy"  # https://blog.51cto.com/oldboy
 test_51cto_docs_list_xpath = "//div[@class='common-article-list']"  # //div[@class="common-article-list"]
 
-
 class TestBeautifulSoup(unittest.TestCase):
 
     @staticmethod
@@ -88,7 +87,6 @@ class TestBeautifulSoup(unittest.TestCase):
         log.debug(f'page_docs size = {len(page_docs)}')
 
         return
-
 
 if __name__ == '__main__':
     test_suite = unittest.TestSuite()

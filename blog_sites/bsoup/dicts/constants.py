@@ -7,14 +7,12 @@
 @Date ：2021/9/4 18:34
 """
 
-
 class Xpath:
     """
       selenium dicts
       web element attribute name
       页面对象常用属性参数
     """
-
     def __init__(self):
         pass
 
@@ -25,16 +23,13 @@ class Xpath:
     ATTRIBUTE_CLASS = "class"
     ATTRIBUTE_VALUE = "value"
 
-
 class WebLinks:
     """网络资源相关链接地址"""
-
     def __init__(self):
         pass
 
     BAI_DU = "https://www.baidu.com"  # 百度首页地址
     BLOG_EXAMPLE_1 = "https://blog.51cto.com/oldboy"  # 51CTO博客站点实例(https://blog.51cto.com/oldboy)
-
 
 class BusinessConstants:
     """业务常用字段"""

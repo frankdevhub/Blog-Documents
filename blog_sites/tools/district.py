@@ -9,7 +9,6 @@
 
 from enum import Enum, unique
 
-
 @unique
 class DefaultDistrict(Enum):
     """默认是上海地区的枚举类"""

@@ -3,7 +3,7 @@
 # @author: frankdevhub
 # @contact: frankdevhub@gmail.com
 # @blog: http://blog.frankdevhub.site
-# @file: test_django_crud.py
+# @file: test_django_orm.py
 # @time: 2021/2/16 12:03
 
 import logging as log
@@ -14,13 +14,13 @@ import django
 
 from ..models.models import BlogDocumentBrief
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'frankdevhub_blog_documents.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'blog_sites.settings')
 django.setup()
 
 log.basicConfig(level=log.DEBUG)
 
 
-class DjangoCrudTest(unittest.TestCase):
+class DjangoORMTest(unittest.TestCase):
 
     @staticmethod
     def test_insert():
@@ -31,6 +31,6 @@ class DjangoCrudTest(unittest.TestCase):
 
 if __name__ == '__main__':
     testunit = unittest.TestSuite()
-    testunit.addTest(DjangoCrudTest("test_insert"))  # test_insert
+    testunit.addTest(DjangoORMTest("test_insert"))  # test_insert
     runner = unittest.TextTestRunner()
     runner.run(testunit)

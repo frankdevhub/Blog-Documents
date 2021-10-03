@@ -14,7 +14,6 @@ from ..tools.character import CharacterHelper
 
 log.basicConfig(level=log.DEBUG)
 
-
 class TestCharacterHelper(unittest.TestCase):
     CHARACTER_EXAMPLE = ('1', '各', '时', '個', '詢', 's', '1', '-')
 
@@ -33,14 +32,12 @@ class TestCharacterHelper(unittest.TestCase):
     @staticmethod
     def test_get_instance_methods():
         """测试获取类的函数成员变量"""
-
         log.debug('invoke method -> test_get_instance_methods()')
         '''
         eg:
          (<function CharacterHelper.character_pattern_match at 0x000001A5D009F3A0>, "<class 'function'>")
          (<function CharacterHelper.is_english_capital_character at 0x0000027B80CBF790>, "<class 'function'>")
         '''
-
         instance_members = [(obj, type(obj)) for (type_name, obj) in inspect.getmembers(CharacterHelper) if
                             inspect.isfunction(obj)]
         # print(instance_members)
@@ -57,7 +54,6 @@ class TestCharacterHelper(unittest.TestCase):
                 print(bool_res)
 
         return True
-
 
 if __name__ == '__main__':
     test_suite = unittest.TestSuite()

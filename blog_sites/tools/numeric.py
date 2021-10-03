@@ -15,7 +15,6 @@ from .character import CharacterHelper
 
 log.basicConfig(level=log.INFO)
 
-
 class NumericUnit(Enum):
     """ 通用计量单位枚举类"""
 

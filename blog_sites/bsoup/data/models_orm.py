@@ -12,14 +12,11 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 Base = declarative_base()
-
-
 # Base.metadata.drop_all(engine)
-
 # Base.metadata.create_all(engine)
 
 def get_session():
-    engine = db.create_engine('mysql+pymysql://roo:root@admin@127.0.0.1:3306/blog_sites')
+    engine = db.create_engine('mysql+pymysql://root:root@admin@127.0.0.1:3306/blog_sites')
     assert engine is not None, f'db engine cannot be empty'
     session = sessionmaker(bind=engine)
     return session

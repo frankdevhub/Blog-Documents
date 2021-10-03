@@ -77,7 +77,6 @@ class TestRegexExpression(unittest.TestCase):
             print(link)
         pass
 
-
 if __name__ == "__main__":
     testunit = unittest.TestSuite()
     testunit.addTest(TestRegexExpression("test_match_head_count"))  # test_match_head_count

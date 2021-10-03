@@ -7,7 +7,6 @@
 @Date ：2021/2/25 2:12
 """
 
-
 # 业务运行异常
 class BusinessError(Exception):
     def __init__(self, err_msg) -> None:
@@ -15,7 +14,6 @@ class BusinessError(Exception):
 
     def __str__(self) -> str:
         return self.err_msg
-
 
 # 获取不到有效资源时的异常
 class NoSuchResourceError(Exception):
