@@ -14,7 +14,6 @@ from ..tools.numeric import NumericUnit
 
 log.basicConfig(level=log.DEBUG)
 
-
 class TestNumericUnit(unittest.TestCase):
 
     def test_numeric_unit_members(self):
@@ -23,7 +22,6 @@ class TestNumericUnit(unittest.TestCase):
             log.debug(f'{instance}')
             for (type_name, obj) in inspect.getmembers(instance):
                 log.debug(f'type_name: {type_name}, obj: {obj}')
-
 
 if __name__ == '__main__':
     unittest.main()
