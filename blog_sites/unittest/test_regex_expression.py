@@ -45,13 +45,13 @@ class TestRegexExpression(unittest.TestCase):
            input = "本季度企业预计招聘23人,其中应届毕业生预计招收12人"
            output = 23, 12
         """
-        log.debug('invoke method -> test_match_head_count()')
+        print('invoke method -> test_match_head_count()')
         matched = re.match(HEAD_COUNT_REGEX, TEST_HEAD_COUNT, re.M | re.I)
         if matched:
-            log.debug(f'prefix : {matched.group("prefix")}')  # prefix
-            log.debug(f'numeric : {matched.group("numeric")}')  # numeric
+            print(f'prefix : {matched.group("prefix")}')  # prefix
+            print(f'numeric : {matched.group("numeric")}')  # numeric
         else:
-            log.debug('not matched')
+            print('not matched')
 
     @staticmethod
     def test_match_blog_union_id():
@@ -61,13 +61,13 @@ class TestRegexExpression(unittest.TestCase):
            input = "https://blog.51cto.com/oldboy/1189530"
            output = 1189530(文档唯一识别号)
         """
-        log.debug('invoke method -> test_match_blog_union_id()')
+        print('invoke method -> test_match_blog_union_id()')
         matched = re.match(r'51cto', TEST_BLOG_DOC_LINK, re.I | re.M)
         if matched:
             print(matched.group())
-            log.debug(f'union id : {matched.group("union_id")}')  # union_id
+            print(f'union id : {matched.group("union_id")}')  # union_id
         else:
-            log.debug('not matched')
+            print('not matched')
 
     @staticmethod
     def test_match_blog_union_ids():
@@ -75,6 +75,7 @@ class TestRegexExpression(unittest.TestCase):
         for link in TEST_BLOG_DOC_LINKS:
             print(link)
         pass
+
 
 if __name__ == "__main__":
     testunit = unittest.TestSuite()
