@@ -13,11 +13,6 @@ import unittest
 
 log.basicConfig(level=log.DEBUG)
 
-"""企业岗位招聘人数的正则表达式 eg:(招1人)"""
-HEAD_COUNT_REGEX = """
-.*(?P<prefix>[招聘|招纳|招|需要|急需|需]+)(?P<numeric>[\u4e00-\u9fa5\u767e\u5343\u96f6]+|[0-9]+|[若干])(?P<surfix>人)$
-"""
-TEST_HEAD_COUNT = "招 23 人"
 """
 51CTO博客站点文章链接提取文档唯一编号 
 eg: 
@@ -29,29 +24,13 @@ BLOG_DOC_ID_REGEX1 = """
 """
 
 BLOG_DOC_ID_REGEX = "(oldboy)"
-TEST_BLOG_DOC_LINK = "https://blog.51cto.com/oldboy/1926142"
+TEST_BLOG_DOC_LINK = "https://blog.51cto.com/oldboy/1926142"  # 测试博客网址链接(51CTO平台)
 TEST_BLOG_DOC_LINKS = ["https://blog.51cto.com/oldboy/1926142", "https://blog.51cto.com/oldboy/1884326",
                        "https://blog.51cto.com/oldboy/1855640", "https://blog.51cto.com/oldboy/775056",
                        "https://blog.51cto.com/oldboy/1855461", "https://blog.51cto.com/oldboy/1911034"]
 
 
 class TestRegexExpression(unittest.TestCase):
-
-    @staticmethod
-    def test_match_head_count():
-        """
-        测试正则表达式匹配企业招聘预算人数
-        eg:
-           input = "本季度企业预计招聘23人,其中应届毕业生预计招收12人"
-           output = 23, 12
-        """
-        print('invoke method -> test_match_head_count()')
-        matched = re.match(HEAD_COUNT_REGEX, TEST_HEAD_COUNT, re.M | re.I)
-        if matched:
-            print(f'prefix : {matched.group("prefix")}')  # prefix
-            print(f'numeric : {matched.group("numeric")}')  # numeric
-        else:
-            print('not matched')
 
     @staticmethod
     def test_match_blog_union_id():
@@ -61,7 +40,7 @@ class TestRegexExpression(unittest.TestCase):
            input = "https://blog.51cto.com/oldboy/1189530"
            output = 1189530(文档唯一识别号)
         """
-        print('invoke method -> test_match_blog_union_id()')
+        log.debug('invoke method -> test_match_blog_union_id()')
         matched = re.match(r'51cto', TEST_BLOG_DOC_LINK, re.I | re.M)
         if matched:
             print(matched.group())
@@ -79,8 +58,7 @@ class TestRegexExpression(unittest.TestCase):
 
 if __name__ == "__main__":
     testunit = unittest.TestSuite()
-    testunit.addTest(TestRegexExpression("test_match_head_count"))  # test_match_head_count
     testunit.addTest(TestRegexExpression("test_match_blog_union_id"))  # test_match_blog_union_id
-    testunit.addTest(TestRegexExpression("test_match_blog_union_ids"))  # test_match_blog_union_ids
+    # testunit.addTest(TestRegexExpression("test_match_blog_union_ids"))  # test_match_blog_union_ids
     runner = unittest.TextTestRunner()
     runner.run(testunit)
