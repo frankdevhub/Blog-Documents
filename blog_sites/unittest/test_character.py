@@ -22,11 +22,12 @@ class TestCharacterHelper(unittest.TestCase):
         """测试是否是简体中文字符"""
 
         log.debug('invoke method -> test_is_simple_chinese_character()')
-        for x in TestCharacterHelper.CHARACTER_EXAMPLE:
-            log.debug(type(x))
+        examples = TestCharacterHelper.CHARACTER_EXAMPLE
+        for x in examples:
+            print(type(x))
             bool_res = CharacterHelper.is_simple_chinese_character(x)
             assert isinstance(bool_res, bool)
-            log.debug(f'test rest: {bool_res}')
+            print(f'return value: {bool_res}')
         return True
 
     @staticmethod
@@ -52,7 +53,7 @@ class TestCharacterHelper(unittest.TestCase):
             if fun_name.lstrip().startswith('is_'):
                 bool_res = func(test_example)
                 assert isinstance(bool_res, bool)
-                print(bool_res)
+                print(f'return value: {bool_res}')
 
         return True
 
