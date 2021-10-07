@@ -8,12 +8,10 @@
 """
 
 import inspect
-import logging as log
 from enum import Enum
 
 from .character import CharacterHelper
 
-log.basicConfig(level=log.INFO)
 
 class NumericUnit(Enum):
     """ 通用计量单位枚举类"""
@@ -26,13 +24,13 @@ class NumericUnit(Enum):
 
         for inst in instance_members:
             func = inst[0]
-            log.info(f'function_name: {func.__name__} ,arg_count: {func.__code__.co_argcount}')
+            print(f'func_name: {func.__name__} ,args_count: {func.__code__.co_argcount}')
             fun_name = func.__name__
             if fun_name.lstrip().startswith('is_'):
                 bool_res = func(unit)
                 assert isinstance(bool_res, bool)
                 setattr(instance, func.__name__, bool_res)
-                log.info(f'function_name: {func.__name__} ,bool_res: {bool_res}')
+                print(f'func_name: {func.__name__} ,return: {bool_res}')
         return instance
 
     Digitis_CN = '个'  # 个位数 简体中文
