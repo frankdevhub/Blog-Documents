@@ -86,8 +86,14 @@ def is_unit_by_month(text: str) -> bool:
     else:
         return False
 
+
 def is_unit_by_year(text: str) -> bool:
-    """是否是以年为计量单位"""
+    """
+    是否是以年为计量单位
+    @param text:
+    @return:
+    @rtype: bool
+    """
     log.info(f'invoke method -> is_unit_by_year(), time unit text: {text}')
     try:
         unit = DateUnit(text.strip())
