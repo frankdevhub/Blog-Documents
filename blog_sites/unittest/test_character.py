@@ -32,6 +32,7 @@ class TestCharacterHelper(unittest.TestCase):
     @staticmethod
     def test_get_instance_methods():
         """测试获取类的函数成员变量"""
+
         log.debug('invoke method -> test_get_instance_methods()')
         '''
         eg:
