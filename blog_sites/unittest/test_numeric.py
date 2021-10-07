@@ -19,9 +19,9 @@ class TestNumericUnit(unittest.TestCase):
     def test_numeric_unit_members(self):
         log.debug('invoke method -> test_numeric_unit_members()')
         for instance in NumericUnit.__members__:
-            log.debug(f'{instance}')
+            print(f'{instance}')
             for (type_name, obj) in inspect.getmembers(instance):
-                log.debug(f'type_name: {type_name}, obj: {obj}')
+                print(f'type_name: {type_name}, obj: {obj}')
 
 if __name__ == '__main__':
     unittest.main()
