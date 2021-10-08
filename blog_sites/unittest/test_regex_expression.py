@@ -56,6 +56,6 @@ class TestRegexExpression(unittest.TestCase):
 if __name__ == "__main__":
     testunit = unittest.TestSuite()
     testunit.addTest(TestRegexExpression("test_match_blog_union_id"))  # test_match_blog_union_id
-    # testunit.addTest(TestRegexExpression("test_match_blog_union_ids"))  # test_match_blog_union_ids
+    testunit.addTest(TestRegexExpression("test_match_blog_union_ids"))  # test_match_blog_union_ids
     runner = unittest.TextTestRunner()
     runner.run(testunit)
