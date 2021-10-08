@@ -8,7 +8,7 @@
 """
 import logging as log
 import unittest
-
+import requests
 from bs4 import BeautifulSoup
 from lxml import etree
 
@@ -38,12 +38,12 @@ class TestBeautifulSoup(unittest.TestCase):
           <p class="story">...</p>
           """
         soup = BeautifulSoup(html)
-        assert soup is not None, 'soup cannot be empty'
+        assert soup is not None, 'soup cannot be none'
         # soup = BeautifulSoup(open('index.html'))  # 使用本地文件创建对象
         # log.debug(soup.prettify())
 
     @staticmethod
-    def test_51cto_blog_example() -> etree:
+    def test_51cto_blog_etree() -> etree:
         """
         测试抓取博客网页文本html原始内容
         eg:
@@ -54,11 +54,11 @@ class TestBeautifulSoup(unittest.TestCase):
         log.debug('invoke method -> test_51cto_blog_example()')
         response = requests.get(url=test_51cto_blog_example, headers=test_headers)
         page_context = response.text
-        log.debug(page_context)
+        print(page_context)
 
         tree = etree.HTML(page_context)
-        assert tree is not None, 'xml tree cannot be empty'
-        log.debug(type(tree))
+        assert tree is not None, 'xml tree cannot be none'
+        print(type(tree))
         return tree
 
     @staticmethod
@@ -70,24 +70,24 @@ class TestBeautifulSoup(unittest.TestCase):
         @return: 页面对象中的博文列表对象
         @rtype: list
         """
-        log.debug('invoke method -> test_51cto_get_page_docs()')
+        print('invoke method -> test_51cto_get_page_docs()')
         docs_xpath = test_51cto_docs_list_xpath
-        log.debug(f'using xpath = {str(docs_xpath)}')
+        print(f'using xpath = {str(docs_xpath)}')
         # docs_tree = test_51cto_blog_example()
         response = requests.get(url=test_51cto_blog_example, headers=test_headers)
         page_context = response.text
         docs_tree = etree.HTML(page_context)
 
-        assert docs_tree is not None, 'xml tree cannot be empty'
+        assert docs_tree is not None, 'xml tree cannot be none'
         page_docs = docs_tree.xpath(docs_xpath)
-        assert page_docs is not None, 'page_docs cannot be found'
-        log.debug(f'page_docs size = {len(page_docs)}')
+        assert page_docs is not None, 'page_docs cannot be none'
+        print(f'page_docs size = {len(page_docs)}')
         return
 
 if __name__ == '__main__':
     test_suite = unittest.TestSuite()
     # test_suite.addTest(TestBeautifulSoup('test_local'))  # test_local
-    # test_suite.addTest(TestBeautifulSoup('test_51cto_blog_example'))  # test_51cto_blog_example
+    # test_suite.addTest(TestBeautifulSoup('test_51cto_blog_etree'))  # test_51cto_blog_etree
     test_suite.addTest(TestBeautifulSoup('test_51cto_get_page_docs'))  # test_51cto_get_page_docs
     runner = unittest.TextTestRunner()
     runner.run(test_suite)

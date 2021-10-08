@@ -1,0 +1,2952 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>老男孩oldboy的博客_备份,网络,数据恢复,防火墙,容灾,网络监控,存储,培训,实战,写书_51CTO博客</title>
+    <meta name="keywords" content="老男孩oldboy的博客,备份,网络,数据恢复,防火墙,容灾,网络监控,存储,培训,实战,写书,技术博客,51CTO博客">
+    <meta name="description" content="老男孩oldboy的博客，备份,网络,数据恢复,防火墙,容灾,网络监控,存储,培训,实战,写书it技术文章。">
+    <meta name="applicable-device" content="pc">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="msvalidate.01" content="91C5324FE68C0A46FA65F3FEC225EA65"/>
+    <link rel="canonical" href="https://blog.51cto.com/oldboy">
+    <link type="favicon" rel="shortcut icon" href="/favicon.ico"/>
+    <link href="https://static1.51cto.com/edu/blog/css/base.css|v=9673494614,blog/css/header.css|v=f33748f462,blog/css/other.css|v=a42082c26f,blog/css/list_tab.css|v=ff54e0fbe7,blog/iconFont/iconfont.css|v=cb5114466d,blog/iconFont/iconfont.css|v=cb5114466d,blog/cto/font/fontface.css|v=c21cfdd5a7,blog/scss/newbloger/bloger.css|v=888c17ac7e"
+          rel="stylesheet">
+    <script src="//aeu.alicdn.com/waf/antidomxss_v640.js"></script>
+    <script src="//aeu.alicdn.com/waf/interfaceacting210817.js"></script>
+    <script>var userId=""</script>
+    <script src="https://static2.51cto.com/edu/blog/js/agent/tingyun-20210901.js"></script>
+    <script>
+        var HOME_URL = 'https://home.51cto.com/';
+
+
+    </script>
+    <script src="https://static1.51cto.com/edu/center/js/jquery.min.js,center/js/interaction_iframe.js,blog/js/cookie.js|v=89fd444508,blog/js/login.js|v=439503867e,blog/js/common.js|v=99b8581191,blog/js/mbox.js|v=71458e9568,blog/js/follow.js|v=6343c99612,blog/js/vip.js|v=13232bead2,blog/js/window.js|v=77331fff22"></script>
+</head>
+<body>
+<img src="https://static1.51cto.com/edu/blog/mobile/images/share_default.jpg" border="0"
+     style="width:0; height:0; position:absolute;">
+
+<style type="text/css">
+	.service-btn{
+		width: 53px;
+height: 36px;
+color: #1ac6fe;
+line-height: 16px;
+padding-top: 50px;
+		display: inline-block;
+		background: url(https://s4.51cto.com/images/blog/201811/02/463350acf4c693cfb3dc248bc8a2a0eb.png) no-repeat center;
+	}
+	.service-btn:hover{
+		background: url(https://s4.51cto.com/images/blog/201811/02/2d5fa2ff4eb9ef66847aff20ba4c8bae.png) no-repeat center;
+height: 36px;
+color: #fff;
+line-height: 16px;
+padding-top: 50px;
+	}
+    .special-column .column-1 .column-box .center a.h2{font-size:18px;}
+    .special-column .column-1 .column-box .center h5 span{font-size:14px;}
+    .Header .Navigates.fr li.login {
+      margin-right: 0;
+      padding-right: 0;
+      background: none;
+    }
+
+
+</style>
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+
+<div class="Header" style="height:61px;">
+    <div class="Page clearfix ">
+        <div class="Logo"><a href="https://blog.51cto.com/"><img
+                src="https://static1.51cto.com/edu/blog/images/logonew4.png" alt="51CTO博客" width="202" title="51CTO博客">
+            <h2>51CTO博客</h2></a></div>
+        <ul class="Navigates fl commonhide">
+            <li><a href="https://blog.51cto.com/">首页</a>
+                <div class="spam-classifications">
+                    <div class="spam-classifications-content">
+                        <div class="classification-ipc" id="classification-ipc"></div>
+                        <div class="classification-primary-list-box" id="classification-primary-list-box"></div>
+
+                    </div>
+                </div>
+            </li>
+            <li><a href="https://blog.51cto.com/nav/following">关注</a></li>
+            <li><a href="https://blog.51cto.com/ranking">热榜</a></li>
+            <li class="">
+                <a href="https://blog.51cto.com/cloumn/index" target="_blank">订阅专栏</a>
+            </li>
+
+            <!-- <li>
+                <a href="https://edu.51cto.com/" target="_blank">大咖来了</a>
+            </li> -->
+
+        </ul>
+        <ul class="Navigates Navigates-right fr">
+            <li class="more maps">
+                <a href="javascript:void(0);" class="menu"></a>
+                <div>
+                    <div class="ins">
+
+                        <a href="https://edu.51cto.com/" target="_blank">学堂</a>
+                        <a href="https://e.51cto.com/" target="_blank" rel="nofollow">精培</a>
+                        <a href="https://harmonyos.51cto.com?blogdaohang" target="_blank">鸿蒙社区</a>
+                        <a href="http://bbs.51cto.com/" target="_blank" rel="nofollow">论坛</a>
+                        <a href="http://x.51cto.com" target="_blank" rel="nofollow">CTO训练营</a>
+                        <a href="http://www.51cto.com" target="_blank">51CTO</a>
+                    </div>
+                </div>
+            </li>
+            <li class="logins">
+                <a href="https://home.51cto.com/index?from_service=blog&reback=https://blog.51cto.com/oldboy"
+                   target="_self" class="clearfix" rel="nofollow"><span class="fl">登录</span><b
+                        class="fgline fl"></b><span class="fl">注册</span></a>
+            </li>
+            <li class="mRead commonhide">
+                <a href="javascript:;" rel="nofollow"></a>
+                <div>
+                    <div class="ins">
+                        <div class="towD-box">
+                            <img src="https://static1.51cto.com/edu/blog/images/blog_qr.png">
+                            <p>手机随时阅读</p>
+                        </div>
+                        <div class="towD-box">
+                            <img src="https://s5.51cto.com/oss/202007/05/5a45016915218bb53e32af17b14a8822.jpg">
+                            <p>新人专享大礼包￥24</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="write commonhide"><a href="javascript:;" onClick="Login()" rel="nofollow">写文章</a></li>
+            <li class="search commonhide">
+
+                <form class="fr form-search" method='get' action="https://blog.51cto.com/search/result" target="_blank">
+                    <input type="text" name="q" placeholder="大家都在搜索..." id="TopSearchInput" autocomplete="off">
+                    <button id="TopSearchBtn"></button>
+                </form>
+
+                <div class="focusSelect focusSelect_his">
+
+                    <div class="searchHistoryList">
+                        <div class="clearfix hishead">搜索历史
+                            <span class="clearhis"><i class="iconblog blogshanchu18 "></i>清空</span>
+                        </div>
+                        <div class="hisitem-wrap"></div>
+                    </div>
+
+                    <div class="hotList">
+                        <div class="clearfix hishead">热门搜索</div>
+                        <div class="hot-wrap"></div>
+                    </div>
+
+                </div>
+
+                <div class="focusSelect focusSelect_key">
+                    <div class="keyitem-wrap">
+
+                    </div>
+                    <div class="clearfix checkSearchResult">
+                        <span>查看【</span>
+                        <span class="checkKey"></span>
+                        <span>】的结果</span></div>
+                </div>
+
+
+            </li>
+        </ul>
+
+        <div class="clear"></div>
+    </div>
+</div>
+<script src="https://static5.51cto.com/edu/blog/mobile/js/lib/box.js"></script>
+<script>
+    var isLogin = '0';
+    var userId = '';
+    var imgpath = 'https://s4.51cto.com/';
+    var BLOG_URL = 'https://blog.51cto.com/';
+    var YII_ENV = 'prod';
+    let menuGroup=[[
+      {name:'编程语言'},
+      {name:'大数据'},
+      {name:'云计算'},
+      {name:'数据库'},
+    ],[
+      {name:'Web开发'},
+      {name:'系统/运维'},
+      {name:'网络/安全'},
+      {name:'移动开发'},
+    ],[
+      {name:'软件研发'},
+      {name:'考试认证'},
+      {name:'Office办公'},
+    ],[
+      {name:'人工智能'},
+      {name:'游戏开发'},
+      {name:'嵌入式'},
+    ],[
+      {name:'服务器'},
+      {name:'企业信息化'},
+      {name:'其它'},
+    ]]
+    var msg_num_url = 'https://blog.51cto.com/index/ajax-msg-num';
+    $('.msg-follow, .msg-follow-max').eq(1).css({top: '91px'});
+    $('.msg-follow, .msg-follow-max').eq(2).css({top: '121px'});
+    setTimeout(function(){
+            $.ajax({
+                url:msg_num_url,
+                type:"get",
+                dataType:'json',
+                success:function(res){
+                    if(res.status == '0'){
+                       //
+                       var hasNewMsg = false;
+                       if(res.data.msgNum > 0 && !$('#myMsg i').hasClass('dot')){
+                            $('#myMsg i').addClass('dot');
+                            hasNewMsg = true;
+                       }
+                       if(res.data.notifyNum > 0 && !$('#myNotify i').hasClass('dot')){
+                           $('#myNotify i').addClass('dot');
+                           hasNewMsg = true;
+                       }
+                       if(res.data.recommend_new > 0 && !$('#myRecommend i').hasClass('dot')){
+                           $('#myRecommend i').addClass('dot');
+                           hasNewMsg = true;
+                       }
+                       if(hasNewMsg && !$('#myAllMsg i').hasClass('dot')){
+                           $('#myAllMsg i').addClass('dot');
+                       }
+                    }
+
+                }
+            });
+    },70);
+    
+    $.get(BLOG_URL+'index/cate-list',{},function(res){
+          if(res.data){
+            let data=res.data.data
+            menuGroup=res.data.lines
+            let menuIndex=res.data.length;
+            menuGroup=menuGroup.map(item=>{
+              return item.map(child=>{
+                 let fileData=''
+                 if(''+child.x!='undefined'){
+                  fileData=data[child.x][child.y].item
+                 }else{
+                  fileData=[]
+                 }
+                return {
+                  ...child,
+                  item:fileData
+                }
+              })
+            })
+            createDom(menuGroup)  
+            createDom(menuGroup,1)        
+      
+          }
+        })
+    var creatMenuLeft=function(arr,type){
+      if(arr.length){
+        if(type===1){
+        let domString=arr.map(item=>{
+          let childString=item.item.map(child=>{
+            return `
+                  <a href="${child.url}">${child.name}</a>
+                    `
+          })
+          return `<a class="menu-title" href="${item.url}">${item.name}</a>
+                  <div class="item-list">${childString.join('')}</div>` 
+        })
+        return domString.join('')
+      }else{
+        let domString=arr.map(item=>{
+          return `<a href="${item.url}">${item.name}</a>`
+        })
+        return domString.join('')
+      }
+      }
+      return ''
+   
+        
+    }
+    let classificationMenu=$('#classification-ipc')
+    let classificationChildrenMenu=$('#classification-primary-list-box')
+    var createDom=function(menuArr,type){
+      var domTree='';
+      var childrenTree='';
+      var parentTree='';
+      menuArr.forEach((item,index)=>{
+        if(!type){
+          domTree=domTree+ `
+        <div class="classification-list ${index===0?'check-user':''}"  data-index="${index}">
+          <div>${creatMenuLeft(item)}</div>
+             </div>
+        `
+        }else{
+          parentTree=parentTree+` <div class="classification-primary-list" > ${creatMenuLeft(item,1)} </div>`
+        }
+      })
+      if(!type){
+        classificationMenu.append(domTree)
+      }else{
+        classificationChildrenMenu.append(parentTree)
+      }
+    }
+
+    classificationMenu.on('mouseenter','.classification-list',function(){
+      let index=$(this).attr('data-index')
+      let data=classificationChildrenMenu.find('.classification-primary-list')
+      $(this).addClass('check-user')
+      $(this).siblings().removeClass('check-user')
+      for(var i=0;i<data.length;i++){
+        if(i==index){
+          data[i].style.display='block'
+        }else{
+          data[i].style.display='none'
+        }
+      }
+    })
+
+    //广告图
+
+
+</script>
+
+
+<script>
+var router = 'blogger/index'
+
+
+</script>
+<div class="Content-box">
+    <link rel="stylesheet" href="https://static4.51cto.com/edu/blog/mobile/css/lib/swiper.css">
+    <script src="https://static1.51cto.com/edu/blog/mobile/js/lib/swiper.js?v1" charset="utf-8"></script>
+    <script>
+  
+var is_reload = true;
+$(".follow-top").click(function() {
+    is_reload = false;
+})
+function FollowBtnSucc(e){//1:未关注,2:已关注,3:互相关注
+    if(e==2||e==3){
+        $.post('/index/wxbind',{uid:userId},function(res){
+            if(res.data.wxBind == 0){//没绑定
+                if(getCookie('follow1'))return false;
+                box1()
+            }else{
+                if(getCookie('follow2'))return false;
+                box2()
+            }
+        },'json')
+    }else{
+        if(is_reload) {
+            window.location.reload();
+        }
+    }
+    is_reload = true;
+}
+
+
+    </script>
+    <div class="bloger-content-new">
+        <div class="banner">
+            <div class="Page">
+                <h1 class="name">老男孩linux培训</h1>
+                <nav class="clearfix">
+                    <ul class="clearfix">
+                        <li><a href="https://blog.51cto.com/oldboy/release">动态</a></li>
+                        <li class="cur"><a href="https://blog.51cto.com/oldboy">博客</a></li>
+                        <li><a href="https://blog.51cto.com/oldboy/classify">分类</a></li>
+                        <li><a href="https://blog.51cto.com/oldboy/following">订阅/关注</a></li>
+                    </ul>
+                    <div class="search">
+                        <form class="fr form-search" method='get' action="https://blog.51cto.com/search/user"
+                              target="_blank">
+                            <input type="hidden" name="uid" value="2561410">
+                            <input type="text" name="q" placeholder="搜TA的内容" maxlength="38" id="blogerSearchInput"
+                                   autocomplete="off">
+                            <button class="iconblog blogsou" id="blogerSearchBtn"></button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <aside class="action-aside">
+            <ul>
+                <li class="share">
+                    <strong class="">
+                        <a href="javascript:;"><i class="iconblog blogfen"></i></a>
+                        <span>分享</span>
+                    </strong>
+                    <div class="bdsharebuttonbox">
+                        <div class="ins">
+                            <a class="bds_tsina" data-cmd="tsina"><i class="iconblog blogfenxiangweibo"></i>微博</a>
+                            <a class="bds_sqq" data-cmd="sqq"><i class="iconblog blogfenxiangqq"></i>QQ</a>
+                            <a class="bds_weixin" data-cmd="weixin"><i class="iconblog blogfenxiangweixin"></i>微信</a>
+                            <img src="">
+                        </div>
+                    </div>
+                </li>
+                <li class="scrollTop">
+                    <strong class="ScrollWindowTop">
+                        <a href="javascript:;"><i class="iconblog blogzhi"></i></a>
+                        <span>返回顶部</span>
+                    </strong>
+                </li>
+            </ul>
+        </aside>
+        <div class="clearfix Page">
+            <aside class="bloger-content-left">
+                <section class="common-section common-spacing mb24 user-intr">
+                    <div class="pic"><a href="https://blog.51cto.com/oldboy"><img class="is-vip-img is-vip-img-5"
+                                                                                  data-uid="2561410"
+                                                                                  src="https://ucenter.51cto.com/images/noavatar_middle.gif"
+                                                                                  alt="老男孩oldboy"></a></div>
+                    <div class="clearfix username">
+                        <h3 class="blog-user" title="老男孩oldboy" style="max-width: 262px;">老男孩oldboy</h3>
+                        <div class="icon">
+                            <ul class="clearfix detail-list">
+                                <li><a class="zj" title="专家博客"></a></li>
+                                <li><a class="bkzx" title="博客之星"></a></li>
+                                <li><a class="js" title="讲师"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="dec"> 成功最有效的方法就是和成功者学习。老男孩</div>
+
+
+                    <ul class="clearfix numsbox">
+                        <li class="nums">
+                            <strong>1863.4万</strong>
+                            <span>人气</span>
+                        </li>
+                        <li class="line"></li>
+                        <li class="nums">
+                            <a href="https://blog.51cto.com/oldboy/original">
+                                <strong>586</strong>
+                                <span>原创</span>
+                            </a>
+                        </li>
+                        <li class="nums">
+                            <a href="https://blog.51cto.com/oldboy/followers">
+                                <strong>6262</strong>
+                                <span>粉丝</span>
+                            </a>
+                        </li>
+                        <li class="line"></li>
+                        <li class="nums">
+                            <strong>738.8万</strong>
+                            <span>阅读数</span>
+                        </li>
+                    </ul>
+
+                    <div class="clearfix operating">
+                        <button class="sx" data="https://home.51cto.com/space?uid=2561410" id="ToSx"><a
+                                href="javascript:;" rel="nofollow"><i class="iconblog blogsixin"></i>私信</a></button>
+
+                        <a id="checkFollow_t_2561410" class="follow-1 follow-top checkFollow on"
+                           href="javascript:;">关注</a>
+                        <script>
+                            FollowBtn = new Follow($('#checkFollow_t_2561410'),'2561410','1',['on','in','mutual','off'])
+                            FollowBtn.success=FollowBtnSucc
+
+
+                        </script>
+
+                    </div>
+
+                </section>
+                <section class="common-section common-spacing mb24 joinbox">
+                    <div class="joins">于 <span>2010-12-15</span> 加入 51CTO<span class="time">10.8年</span></div>
+                </section>
+                <section class="common-section common-spacing mb24">
+                    <div class="clearfix common-sub-title">
+                        <h2 title="TA的好课">TA的好课</h2>
+                        <a href="https://edu.51cto.com/lecturer/2561410.html" target="_blank" class="fr more">更多</a>
+                    </div>
+                    <div class="courselistbox">
+                        <dl class="clearfix courselist">
+                            <dt><a href="https://edu.51cto.com/course/487.html" target="_blank"><img
+                                    src="https://s3.51ctocdn.cn/wyfs02/M01/54/86/wKiom1SFVTKwGT4vAADzMNh9SOI411.jpg?x-oss-process=image/resize,m_fixed,w_210,h_128"
+                                    alt="从0开始跟着老男孩学习Shell编程视频课程第二部分"></a></dt>
+                            <dd>
+                                <div class="title"><a href="https://edu.51cto.com/course/487.html" target="_blank">从0开始跟着老男孩学习Shell编程视频课程第二部分</a>
+                                </div>
+                                <div class="clearfix message">
+                                    <span>4961人学习</span>
+                                    <a href="https://edu.51cto.com/course/487.html" target="_blank">开始学习</a>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl class="clearfix courselist">
+                            <dt><a href="https://edu.51cto.com/course/489.html" target="_blank"><img
+                                    src="https://s4.51ctocdn.cn/wyfs02/M00/54/84/wKioL1SFVdHCN4xHAAD1pRthqdk386.jpg?x-oss-process=image/resize,m_fixed,w_210,h_128"
+                                    alt="从0开始跟着老男孩学习Shell编程视频课程[第四部分]"></a></dt>
+                            <dd>
+                                <div class="title"><a href="https://edu.51cto.com/course/489.html" target="_blank">从0开始跟着老男孩学习Shell编程视频课程[第四部分]</a>
+                                </div>
+                                <div class="clearfix message">
+                                    <span>1957人学习</span>
+                                    <a href="https://edu.51cto.com/course/489.html" target="_blank">开始学习</a>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl class="clearfix courselist">
+                            <dt><a href="https://edu.51cto.com/course/532.html" target="_blank"><img
+                                    src="https://s2.51ctocdn.cn/wyfs02/M00/54/84/wKioL1SFVCiABqHhAAEGHeSeQ2g985.jpg?x-oss-process=image/resize,m_fixed,w_210,h_128"
+                                    alt="跟着老男孩从0开始一步步实战深入学习Linux运维视频课程(一)"></a></dt>
+                            <dd>
+                                <div class="title"><a href="https://edu.51cto.com/course/532.html" target="_blank">跟着老男孩从0开始一步步实战深入学习Linux运维视频课程(一)</a>
+                                </div>
+                                <div class="clearfix message">
+                                    <span>49256人学习</span>
+                                    <a href="https://edu.51cto.com/course/532.html" target="_blank">开始学习</a>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </section>
+                <section class="common-section common-spacing mb24">
+                    <div class="clearfix common-sub-title">
+                        <h2 title="感兴趣的领域">感兴趣的领域</h2></div>
+                    <div class="interestbox">
+                        <span>#备份</span>
+                        <span>#网络</span>
+                        <span>#数据恢复</span>
+                        <span>#防火墙</span>
+                        <span>#容灾</span>
+                        <span>#网络监控</span>
+                        <span>#存储</span>
+                    </div>
+                </section>
+                <!-- 近期文章 -->
+
+                <section class="common-section common-spacing mb24">
+                    <div class="clearfix common-sub-title">
+                        <h2 title="近期文章">近期文章</h2>
+                    </div>
+                    <ul class="common-list">
+                        <li>
+                            <a href="https://blog.51cto.com/oldboy/1189530" target="_blank"
+                               title="LDAP跨多机房统一认证及授权管理精品解决方案">LDAP跨多机房统一认证及授权管理精品解决方案</a>
+                        </li>
+                        <li>
+                            <a href="https://blog.51cto.com/oldboy/2156465" target="_blank"
+                               title="一道没人搞得定的趣味Shell编程游戏题！，看看你会不会？">一道没人搞得定的趣味Shell编程游戏题！，看看你会不会？</a>
+                        </li>
+                        <li>
+                            <a href="https://blog.51cto.com/oldboy/1216457" target="_blank"
+                               title="linux下rsync同步工具系列精品视频分享">linux下rsync同步工具系列精品视频分享</a>
+                        </li>
+                        <li>
+                            <a href="https://blog.51cto.com/oldboy/2165177" target="_blank"
+                               title="顶尖专家告诉你IT人34岁危机到底该如何破解">顶尖专家告诉你IT人34岁危机到底该如何破解</a>
+                        </li>
+                        <li>
+                            <a href="https://blog.51cto.com/oldboy/2418110" target="_blank"
+                               title="运维岗位是边缘岗位么？裁员对运维有影响么？">运维岗位是边缘岗位么？裁员对运维有影响么？</a>
+                        </li>
+                    </ul>
+                    <div class="common-list-lines"></div>
+                    <div class="otherYear">
+                        <div class="clearfix years">
+                            <a href="https://blog.51cto.com/oldboy/article/year2019">2019年 14篇</a>
+                            <a href="https://blog.51cto.com/oldboy/article/year2018">2018年 34篇</a>
+                            <a href="https://blog.51cto.com/oldboy/article/year2017">2017年 23篇</a>
+                            <a href="https://blog.51cto.com/oldboy/article/year2016">2016年 76篇</a>
+                            <a href="https://blog.51cto.com/oldboy/article/year2015">2015年 94篇</a>
+                            <a href="https://blog.51cto.com/oldboy/article/year2014">2014年 54篇</a>
+                            <a href="https://blog.51cto.com/oldboy/article/year2013">2013年 147篇</a>
+                            <a href="https://blog.51cto.com/oldboy/article/year2012">2012年 91篇</a>
+                            <a href="https://blog.51cto.com/oldboy/article/year2011">2011年 65篇</a>
+                        </div>
+                    </div>
+                </section>
+                <section class="common-section common-spacing mb24">
+                    <div class="clearfix common-sub-title">
+                        <h2 title="热门好文">热评好文</h2>
+                    </div>
+                    <ul class="common-list common-list-dot">
+                        <li>
+                            <a class="title" href="https://blog.51cto.com/oldboy/2418103" target="_blank"
+                               title="企业招聘对学历要求越来越高，低学历者如何逆袭？">企业招聘对学历要求越来越高，低学历者如何逆袭？</a>
+                        </li>
+                        <li>
+                            <a class="title" href="https://blog.51cto.com/oldboy/2418110" target="_blank"
+                               title="运维岗位是边缘岗位么？裁员对运维有影响么？">运维岗位是边缘岗位么？裁员对运维有影响么？</a>
+                        </li>
+                        <li>
+                            <a class="title" href="https://blog.51cto.com/oldboy/1855453" target="_blank"
+                               title="几道linux运维重要基础测试题，看看你会几个？">几道linux运维重要基础测试题，看看你会几个？</a>
+                        </li>
+                        <li>
+                            <a class="title" href="https://blog.51cto.com/oldboy/1748861" target="_blank"
+                               title="跟老男孩学linux三剑客命令精品分享">跟老男孩学linux三剑客命令精品分享</a>
+                        </li>
+                        <li>
+                            <a class="title" href="https://blog.51cto.com/oldboy/1053606" target="_blank"
+                               title="由su和su -的区别谈学习linux运维方法">由su和su -的区别谈学习linux运维方法</a>
+                        </li>
+                    </ul>
+                </section>
+                <section class="common-section common-spacing mb24">
+                    <div class="clearfix common-sub-title">
+                        <h2 title="近期评论">近期评论</h2>
+                    </div>
+                    <ul class="common-list common-list-dot">
+                        <li>
+                            <a class="title" href="https://blog.51cto.com/oldboy/2418110" target="_blank"
+                               title="运维岗位是边缘岗位么？裁员对运维有影响么？">运维岗位是边缘岗位么？裁员对运维有影响么？</a>
+                            <p class="dec">
+                                冉老师您好，我是一名刚开始接触Linux的小白，之前在网上找了很多视频自学，其中就看到了您的视频，您的视频穿插的一些思想我觉得真的很好很好，也一直想结识您也不知道有没有机会。您的视频给了我的很大的帮助，在这里由衷的感谢。
+                                其实我想问您一些方向上的指导，不知道有没有幸能得您指点。
+                                1、因为我身边没有做这方面的工作的朋友，所以我也不知道到底哪个方向好，冉老师您觉得运维与渗透，到底哪个发展迁就最好？哪个工资高一些？不怕难，我学习能力还可以，我就怕选不对方向、走弯路，我今年24岁了，感觉时间不多了，所以我觉得请教一下过来人会好得多。因为我知道您那个学校主教运维的，然后我开始的目标是渗透，但好像看您视频看的我动摇了...也迷茫了，我一下子觉得运维好了。
+                                2、是关于编程语言的选择，我要是做运维应该学什么语言，做渗透应该学什么语言？我目前的方向是学渗透，语言学c，然后c++ c# Python，但是我很迷茫
+                                ，我不知道我这样下去的方向对不对。运维与渗透的区别大概知道。但哪一个方向更好？我就真的是不知道了，所以很期待冉老师您的解答</p>
+                        </li>
+                        <li>
+                            <a class="title" href="https://blog.51cto.com/oldboy/2418103" target="_blank"
+                               title="企业招聘对学历要求越来越高，低学历者如何逆袭？">企业招聘对学历要求越来越高，低学历者如何逆袭？</a>
+                            <p class="dec">
+                                老师的话字字落在我心坎上，感触颇深，正是有这样的老师，还在坚持无私的分享经验，才有了我坚持下去的动力，四板斧的前面3点确实很难，但是第4点更加的不易，不说学习，单单就这份坚持就是我最值得学习的地方了！！感谢老师的慷慨解囊！</p>
+                        </li>
+                        <li>
+                            <a class="title" href="https://blog.51cto.com/oldboy/2321792" target="_blank"
+                               title="老男孩：Linux运维岗位强于开发岗位的6点优势">老男孩：Linux运维岗位强于开发岗位的6点优势</a>
+                            <p class="dec">
+                                老师真给咱东北人张脸，大赞，人在外地，都不大敢承认自己来自东北了，因为周边的东北人都弱爆了，懒，馋，滑，不求上进。东北如果多出向老师这样的人就好了。</p>
+                        </li>
+                        <li>
+                            <a class="title" href="https://blog.51cto.com/oldboy/2165177" target="_blank"
+                               title="顶尖专家告诉你IT人34岁危机到底该如何破解">顶尖专家告诉你IT人34岁危机到底该如何破解</a>
+                            <p class="dec">
+                                一直比较忙，很久没来IT界大佬博客浏览学习了，看了这篇文章收获慢慢。感谢老男孩老师，一直学以致用，也一直照着您的思想砥砺前行，只是实践的还不到位，究其缘由个人悟性还有待提高。</p>
+                        </li>
+                        <li>
+                            <a class="title" href="https://blog.51cto.com/oldboy/2156465" target="_blank"
+                               title="一道没人搞得定的趣味Shell编程游戏题！，看看你会不会？">一道没人搞得定的趣味Shell编程游戏题！，看看你会不会？</a>
+                            <p class="dec">还有些BUG没改，判断输入内容是否为空的还没有加上去</p>
+                        </li>
+                    </ul>
+                </section>
+                <section class="common-section common-spacing mb24">
+                    <div class="clearfix common-sub-title">
+                        <h2 title="七日热门">七日热门</h2>  <a href="https://blog.51cto.com/nav" target="_blank">全部文章</a>
+                    </div>
+
+
+                    <div class="Box_content22">
+                        <div class="Box-item-content">
+                            <div class="Box_content22_title">
+                                <div class='cir'></div>
+                                <a href="https://blog.51cto.com/2367685/2360351" target="_blank">完全备份，差异备份，增量备份</a>
+                            </div>
+                            <div class=" swiper-container11">
+                                <div class="tag-box">
+
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/beifen.html" class="fl"
+                                           target="_blank">备份</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="Box-item-content">
+                            <div class="Box_content22_title">
+                                <div class='cir'></div>
+                                <a href="https://blog.51cto.com/yujianglei/1560519" target="_blank">oralce
+                                    冷备份、热备份、物理备份、逻辑备份</a>
+                            </div>
+                            <div class=" swiper-container11">
+                                <div class="tag-box">
+
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/database.html" class="fl" target="_blank">database</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/sequence.html" class="fl" target="_blank">sequence</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/shujukubeifen.html" class="fl"
+                                           target="_blank">数据库备份</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="Box-item-content">
+                            <div class="Box_content22_title">
+                                <div class='cir'></div>
+                                <a href="https://blog.51cto.com/13696145/3665677" target="_blank">Linux备份策略（完全备份、增量备份和差异备份）</a>
+                            </div>
+                            <div class=" swiper-container11">
+                                <div class="tag-box">
+
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/yunwei.html" class="fl"
+                                           target="_blank">运维</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/shujuku.html" class="fl" target="_blank">数据库</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/shuju.html" class="fl"
+                                           target="_blank">数据</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/zengliangbeifen.html" class="fl"
+                                           target="_blank">增量备份</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/fuwuqi.html" class="fl" target="_blank">服务器</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="Box-item-content">
+                            <div class="Box_content22_title">
+                                <div class='cir'></div>
+                                <a href="https://blog.51cto.com/huacai/283062" target="_blank">关于完全备份，差异备份，增量备份</a>
+                            </div>
+                            <div class=" swiper-container11">
+                                <div class="tag-box">
+
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/zhichang.html" class="fl" target="_blank">职场</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/xiuxian.html" class="fl" target="_blank">休闲</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/zengliangbeifen.html" class="fl"
+                                           target="_blank">增量备份</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/wanquanbeifen.html" class="fl"
+                                           target="_blank">完全备份</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/chayibeifen.html" class="fl"
+                                           target="_blank">差异备份</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="Box-item-content">
+                            <div class="Box_content22_title">
+                                <div class='cir'></div>
+                                <a href="https://blog.51cto.com/10978134/2050105" target="_blank">完整备份、增量备份、差异备份</a>
+                            </div>
+                            <div class=" swiper-container11">
+                                <div class="tag-box">
+
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/linux.html" class="fl" target="_blank">Linux</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/beifengainian.html" class="fl"
+                                           target="_blank">备份概念</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </section>
+                <!-- 分类 -->
+
+                <section class="common-section common-spacing mb24 classification_000" id="Classification_648">
+                    <div class="clearfix common-sub-title">
+                        <h2 title="Ta的分类">Ta的分类</h2>
+                    </div>
+                    <ul class="common-list common-list-dot" id="classification_001">
+
+                    </ul>
+                    <div class="Classification_648_add" id="Classification_648_add" onclick="addClassification(1)">
+                        加载更多
+                    </div>
+                </section>
+                <section class="common-section common-spacing mb24">
+                    <div class="clearfix common-sub-title">
+                        <h2 title="近期来访">近期来访</h2>
+                    </div>
+                    <ul class="clearfix guestbox">
+                        <li>
+                            <div class="pic">
+                                <a href="https://blog.51cto.com/u_1954529">
+                                    <img class="is-vip-img is-vip-img-5" data-uid="1944529"
+                                         src="https://ucenter.51cto.com/images/noavatar_middle.gif">
+                                </a>
+                            </div>
+                            <div class="name"><a href="https://blog.51cto.com/u_1954529" title="">z10838932</a></div>
+                        </li>
+                        <li>
+                            <div class="pic">
+                                <a href="https://blog.51cto.com/u_15306416">
+                                    <img class="is-vip-img is-vip-img-5" data-uid="15296416"
+                                         src="https://ucenter.51cto.com/images/noavatar_middle.gif">
+                                </a>
+                            </div>
+                            <div class="name"><a href="https://blog.51cto.com/u_15306416" title="">竹马陈</a></div>
+                        </li>
+                        <li>
+                            <div class="pic">
+                                <a href="https://blog.51cto.com/u_11394488">
+                                    <img class="is-vip-img is-vip-img-5" data-uid="11384488"
+                                         src="https://ucenter.51cto.com/images/noavatar_middle.gif">
+                                </a>
+                            </div>
+                            <div class="name"><a href="https://blog.51cto.com/u_11394488" title="">天雷哄哄</a></div>
+                        </li>
+                        <li>
+                            <div class="pic">
+                                <a href="https://blog.51cto.com/u_11852103">
+                                    <img class="is-vip-img is-vip-img-5" data-uid="11842103"
+                                         src="https://ucenter.51cto.com/images/noavatar_middle.gif">
+                                </a>
+                            </div>
+                            <div class="name"><a href="https://blog.51cto.com/u_11852103" title="">白衣散人</a></div>
+                        </li>
+                        <li>
+                            <div class="pic">
+                                <a href="https://blog.51cto.com/u_15386112">
+                                    <img class="is-vip-img is-vip-img-5" data-uid="15376112"
+                                         src="https://ucenter.51cto.com/images/noavatar_middle.gif">
+                                </a>
+                            </div>
+                            <div class="name"><a href="https://blog.51cto.com/u_15386112" title="">fenixnt</a></div>
+                        </li>
+                        <li>
+                            <div class="pic">
+                                <a href="https://blog.51cto.com/u_15361994">
+                                    <img class="is-vip-img is-vip-img-5" data-uid="15351994"
+                                         src="https://ucenter.51cto.com/images/noavatar_middle.gif">
+                                </a>
+                            </div>
+                            <div class="name"><a href="https://blog.51cto.com/u_15361994" title="">mb6139be212449c</a>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </aside>
+            <div class="bloger-content-right">
+                <section class="common-section common-spacing" id="common-section-one">
+
+
+                    <div class="conditions">
+                        <ul class="clearfix">
+                            <li class="article-type">
+                                <a href="" class="first">全部<i class="iconblog blogzhankai"></i></a>
+                                <div class="hideItem">
+                                    <div class="inner">
+                                        <a href="/oldboy" class="cur">全部</a>
+                                        <a href="/oldboy/original">原创</a>
+                                        <a href="/oldboy/reproduce">转载</a>
+                                        <a href="/oldboy/translate">翻译</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="sortajax"><a class="first" href="javascript:;" class="first" sort="published">按发布时间</a>
+                            </li>
+                            <li class="sortajax"><a class="first" href="javascript:;" class="first"
+                                                    sort="views">按阅读量</a></li>
+                            <li class="time-line">
+                                <a href="" class="first">时间轴<i class="iconblog blogzhankai"></i></a>
+                                <div class="hideItem">
+                                    <div class="inner">
+                                        <a href="/oldboy" class="                                            total"
+                                        ><span>全部</span><strong>598篇</strong>
+                                        </a>
+                                        <div class="timelist"><a href="/oldboy/article/year2019"
+                                                                 class="                                            year clearfix"
+                                        ><span>2019年</span><strong>14篇</strong>
+                                        </a>
+                                            <a href="/oldboy/article/year2019/month7"
+                                               class="                                            month clearfix"
+                                            ><span>07月</span><strong>2篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2019/month5"
+                                               class="                                            month clearfix"
+                                            ><span>05月</span><strong>1篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2019/month4"
+                                               class="                                            month clearfix"
+                                            ><span>04月</span><strong>2篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2019/month3"
+                                               class="                                            month clearfix"
+                                            ><span>03月</span><strong>2篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2019/month2"
+                                               class="                                            month clearfix"
+                                            ><span>02月</span><strong>2篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2019/month1"
+                                               class="                                            month clearfix"
+                                            ><span>01月</span><strong>5篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2018"
+                                               class="                                            year clearfix"
+                                            ><span>2018年</span><strong>34篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2018/month12"
+                                               class="                                            month clearfix"
+                                            ><span>12月</span><strong>2篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2018/month11"
+                                               class="                                            month clearfix"
+                                            ><span>11月</span><strong>4篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2018/month10"
+                                               class="                                            month clearfix"
+                                            ><span>10月</span><strong>3篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2018/month8"
+                                               class="                                            month clearfix"
+                                            ><span>08月</span><strong>5篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2018/month7"
+                                               class="                                            month clearfix"
+                                            ><span>07月</span><strong>3篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2018/month6"
+                                               class="                                            month clearfix"
+                                            ><span>06月</span><strong>3篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2018/month5"
+                                               class="                                            month clearfix"
+                                            ><span>05月</span><strong>7篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2018/month4"
+                                               class="                                            month clearfix"
+                                            ><span>04月</span><strong>3篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2018/month3"
+                                               class="                                            month clearfix"
+                                            ><span>03月</span><strong>2篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2018/month1"
+                                               class="                                            month clearfix"
+                                            ><span>01月</span><strong>2篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2017"
+                                               class="                                            year clearfix"
+                                            ><span>2017年</span><strong>23篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2017/month11"
+                                               class="                                            month clearfix"
+                                            ><span>11月</span><strong>1篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2017/month10"
+                                               class="                                            month clearfix"
+                                            ><span>10月</span><strong>1篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2017/month9"
+                                               class="                                            month clearfix"
+                                            ><span>09月</span><strong>2篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2017/month8"
+                                               class="                                            month clearfix"
+                                            ><span>08月</span><strong>1篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2017/month7"
+                                               class="                                            month clearfix"
+                                            ><span>07月</span><strong>5篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2017/month6"
+                                               class="                                            month clearfix"
+                                            ><span>06月</span><strong>1篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2017/month5"
+                                               class="                                            month clearfix"
+                                            ><span>05月</span><strong>2篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2017/month4"
+                                               class="                                            month clearfix"
+                                            ><span>04月</span><strong>3篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2017/month3"
+                                               class="                                            month clearfix"
+                                            ><span>03月</span><strong>3篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2017/month1"
+                                               class="                                            month clearfix"
+                                            ><span>01月</span><strong>4篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2016"
+                                               class="                                            year clearfix"
+                                            ><span>2016年</span><strong>76篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2016/month12"
+                                               class="                                            month clearfix"
+                                            ><span>12月</span><strong>5篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2016/month11"
+                                               class="                                            month clearfix"
+                                            ><span>11月</span><strong>2篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2016/month10"
+                                               class="                                            month clearfix"
+                                            ><span>10月</span><strong>8篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2016/month9"
+                                               class="                                            month clearfix"
+                                            ><span>09月</span><strong>15篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2016/month8"
+                                               class="                                            month clearfix"
+                                            ><span>08月</span><strong>1篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2016/month7"
+                                               class="                                            month clearfix"
+                                            ><span>07月</span><strong>3篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2016/month6"
+                                               class="                                            month clearfix"
+                                            ><span>06月</span><strong>4篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2016/month5"
+                                               class="                                            month clearfix"
+                                            ><span>05月</span><strong>5篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2016/month4"
+                                               class="                                            month clearfix"
+                                            ><span>04月</span><strong>4篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2016/month3"
+                                               class="                                            month clearfix"
+                                            ><span>03月</span><strong>16篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2016/month2"
+                                               class="                                            month clearfix"
+                                            ><span>02月</span><strong>5篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2016/month1"
+                                               class="                                            month clearfix"
+                                            ><span>01月</span><strong>8篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2015"
+                                               class="                                            year clearfix"
+                                            ><span>2015年</span><strong>94篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2015/month12"
+                                               class="                                            month clearfix"
+                                            ><span>12月</span><strong>18篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2015/month11"
+                                               class="                                            month clearfix"
+                                            ><span>11月</span><strong>10篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2015/month10"
+                                               class="                                            month clearfix"
+                                            ><span>10月</span><strong>5篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2015/month9"
+                                               class="                                            month clearfix"
+                                            ><span>09月</span><strong>5篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2015/month8"
+                                               class="                                            month clearfix"
+                                            ><span>08月</span><strong>13篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2015/month7"
+                                               class="                                            month clearfix"
+                                            ><span>07月</span><strong>4篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2015/month6"
+                                               class="                                            month clearfix"
+                                            ><span>06月</span><strong>7篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2015/month5"
+                                               class="                                            month clearfix"
+                                            ><span>05月</span><strong>8篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2015/month4"
+                                               class="                                            month clearfix"
+                                            ><span>04月</span><strong>12篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2015/month3"
+                                               class="                                            month clearfix"
+                                            ><span>03月</span><strong>2篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2015/month2"
+                                               class="                                            month clearfix"
+                                            ><span>02月</span><strong>5篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2015/month1"
+                                               class="                                            month clearfix"
+                                            ><span>01月</span><strong>5篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2014"
+                                               class="                                            year clearfix"
+                                            ><span>2014年</span><strong>54篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2014/month12"
+                                               class="                                            month clearfix"
+                                            ><span>12月</span><strong>1篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2014/month11"
+                                               class="                                            month clearfix"
+                                            ><span>11月</span><strong>4篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2014/month10"
+                                               class="                                            month clearfix"
+                                            ><span>10月</span><strong>3篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2014/month9"
+                                               class="                                            month clearfix"
+                                            ><span>09月</span><strong>2篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2014/month8"
+                                               class="                                            month clearfix"
+                                            ><span>08月</span><strong>2篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2014/month7"
+                                               class="                                            month clearfix"
+                                            ><span>07月</span><strong>2篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2014/month6"
+                                               class="                                            month clearfix"
+                                            ><span>06月</span><strong>8篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2014/month5"
+                                               class="                                            month clearfix"
+                                            ><span>05月</span><strong>5篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2014/month4"
+                                               class="                                            month clearfix"
+                                            ><span>04月</span><strong>10篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2014/month3"
+                                               class="                                            month clearfix"
+                                            ><span>03月</span><strong>6篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2014/month2"
+                                               class="                                            month clearfix"
+                                            ><span>02月</span><strong>6篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2014/month1"
+                                               class="                                            month clearfix"
+                                            ><span>01月</span><strong>5篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2013"
+                                               class="                                            year clearfix"
+                                            ><span>2013年</span><strong>147篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2013/month12"
+                                               class="                                            month clearfix"
+                                            ><span>12月</span><strong>10篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2013/month11"
+                                               class="                                            month clearfix"
+                                            ><span>11月</span><strong>10篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2013/month10"
+                                               class="                                            month clearfix"
+                                            ><span>10月</span><strong>4篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2013/month9"
+                                               class="                                            month clearfix"
+                                            ><span>09月</span><strong>10篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2013/month8"
+                                               class="                                            month clearfix"
+                                            ><span>08月</span><strong>7篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2013/month7"
+                                               class="                                            month clearfix"
+                                            ><span>07月</span><strong>4篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2013/month6"
+                                               class="                                            month clearfix"
+                                            ><span>06月</span><strong>36篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2013/month5"
+                                               class="                                            month clearfix"
+                                            ><span>05月</span><strong>21篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2013/month4"
+                                               class="                                            month clearfix"
+                                            ><span>04月</span><strong>12篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2013/month3"
+                                               class="                                            month clearfix"
+                                            ><span>03月</span><strong>5篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2013/month2"
+                                               class="                                            month clearfix"
+                                            ><span>02月</span><strong>7篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2013/month1"
+                                               class="                                            month clearfix"
+                                            ><span>01月</span><strong>21篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2012"
+                                               class="                                            year clearfix"
+                                            ><span>2012年</span><strong>91篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2012/month12"
+                                               class="                                            month clearfix"
+                                            ><span>12月</span><strong>9篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2012/month11"
+                                               class="                                            month clearfix"
+                                            ><span>11月</span><strong>6篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2012/month10"
+                                               class="                                            month clearfix"
+                                            ><span>10月</span><strong>3篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2012/month9"
+                                               class="                                            month clearfix"
+                                            ><span>09月</span><strong>7篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2012/month8"
+                                               class="                                            month clearfix"
+                                            ><span>08月</span><strong>7篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2012/month7"
+                                               class="                                            month clearfix"
+                                            ><span>07月</span><strong>8篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2012/month6"
+                                               class="                                            month clearfix"
+                                            ><span>06月</span><strong>8篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2012/month5"
+                                               class="                                            month clearfix"
+                                            ><span>05月</span><strong>5篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2012/month4"
+                                               class="                                            month clearfix"
+                                            ><span>04月</span><strong>11篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2012/month3"
+                                               class="                                            month clearfix"
+                                            ><span>03月</span><strong>3篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2012/month2"
+                                               class="                                            month clearfix"
+                                            ><span>02月</span><strong>17篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2012/month1"
+                                               class="                                            month clearfix"
+                                            ><span>01月</span><strong>7篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2011"
+                                               class="                                            year clearfix"
+                                            ><span>2011年</span><strong>65篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2011/month12"
+                                               class="                                            month clearfix"
+                                            ><span>12月</span><strong>7篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2011/month11"
+                                               class="                                            month clearfix"
+                                            ><span>11月</span><strong>7篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2011/month10"
+                                               class="                                            month clearfix"
+                                            ><span>10月</span><strong>3篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2011/month9"
+                                               class="                                            month clearfix"
+                                            ><span>09月</span><strong>1篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2011/month8"
+                                               class="                                            month clearfix"
+                                            ><span>08月</span><strong>5篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2011/month7"
+                                               class="                                            month clearfix"
+                                            ><span>07月</span><strong>10篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2011/month6"
+                                               class="                                            month clearfix"
+                                            ><span>06月</span><strong>14篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2011/month5"
+                                               class="                                            month clearfix"
+                                            ><span>05月</span><strong>10篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2011/month3"
+                                               class="                                            month clearfix"
+                                            ><span>03月</span><strong>1篇</strong>
+                                            </a>
+                                            <a href="/oldboy/article/year2011/month1"
+                                               class="                                            month clearfix"
+                                            ><span>01月</span><strong>7篇</strong>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li><a class="first clearfix" href="/oldboy/push"><i
+                                    class="iconblog blogweixuanzhongbeifen"></i>推荐</a></li>
+
+                        </ul>
+                    </div>
+
+                    <div class="common-article-listbox" id="common-article-listbox-1">
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a href="https://blog.51cto.com/oldboy/1189530">LDAP跨多机房统一认证及授权管理精品解决方案</a>
+                                </h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/1189530"> 本博文说明：这是一篇充满老男孩海量血汗的珍贵生产运维高标准解决方案，曾经为企业提供解决方案，价值1-2w,累计为企业提供解决方案3次+。1）LDAP服务实战应用指南章节VIP视频已录制完毕。2）现在已经对外单独开设LDAP完整解决方案面授课程，手把手实战讲解LDAP整体解决方案。3）下面的目录同时是老男孩未来出书的草稿。   有需要VIP视频及考虑面授（需</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/shipin.html" class="fl"
+                                           target="_blank">视频</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/huodongmulu.html" class="fl"
+                                           target="_blank">活动目录</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/xieshu.html" class="fl"
+                                           target="_blank">写书</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaipeixun.html" class="fl"
+                                           target="_blank">老男孩培训</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/ldapfuwu.html" class="fl" target="_blank">LDAP服务</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>8</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>10000+</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>1</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>13</b>
+                    </span>
+                                <span class="actions fr">2013-04-28</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+
+                                <a class="pic" href="https://blog.51cto.com/oldboy/2156465" target="_blank">
+                                    <img src="http://s1.51cto.com/images/20180808/1533726784111124.png?x-oss-process=image/resize,m_fixed,h_70,w_116"
+                                         alt="一道没人搞得定的趣味Shell编程游戏题！，看看你会不会？">
+                                </a>
+                                <h3 class="title"><a href="https://blog.51cto.com/oldboy/2156465">一道没人搞得定的趣味Shell编程游戏题！，看看你会不会？</a>
+                                </h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2156465">猜数字游戏。首先让系统随机生成一个数字，给这个数字定一个范围（1-60），让用户输入猜的数字，对输入进行判断，如果不符合要求，就给予高或低的提示，猜对后则给出猜对用的次数，并根据猜的历史给出击败了百分之多少的已经猜过的用户，并把关键的内容以特殊颜色提示用户。最终实现效果如下：3天后公布源码答案。有兴趣的伙伴可以做一做。</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/shell.html" class="fl" target="_blank">shell</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/bianchengti.html" class="fl"
+                                           target="_blank">编程题</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhai.html" class="fl"
+                                           target="_blank">老男孩</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>8</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>7972</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>1</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>15</b>
+                    </span>
+                                <span class="actions fr">2018-08-08</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+
+                                <a class="pic" href="https://blog.51cto.com/oldboy/2165177" target="_blank">
+                                    <img src="http://s1.51cto.com/images/20180915/1536977124904258.png?x-oss-process=image/resize,m_fixed,h_70,w_116"
+                                         alt="顶尖专家告诉你IT人34岁危机到底该如何破解">
+                                </a>
+                                <h3 class="title"><a
+                                        href="https://blog.51cto.com/oldboy/2165177">顶尖专家告诉你IT人34岁危机到底该如何破解</a></h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2165177">老男孩教你如何破解IT人34岁的危机</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/itren34sui.html" class="fl"
+                                           target="_blank">IT人34岁</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/zhongnianweiji.html" class="fl"
+                                           target="_blank">中年危机</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>10</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>10000+</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>4</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>12</b>
+                    </span>
+                                <span class="actions fr">2018-08-28</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a
+                                        href="https://blog.51cto.com/oldboy/2418110">运维岗位是边缘岗位么？裁员对运维有影响么？</a></h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2418110">1、 运维是边缘岗位吗?A. IDC
+                                    机房运维，基本是。B. 监控运维，基本也是。C. 实施运维，是客户做项目实施、部署。2019
+                                    年大趋势，大型企业、传统企业，他们会把大量的工作，外包到外包公司做。行业的热度上升到前十，排名第六位。D.
+                                    系统运维(后台服务运维)，企业里运营关键业务的人员(Linux 运维、数据库运维、devops 运维工程师，云计算运维工程师，大数据运维工程师)企业离不开运维，</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaigo.html" class="fl"
+                                           target="_blank">老男孩go</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/linuxyunwei.html" class="fl"
+                                           target="_blank">Linux运维</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/linuxzhichang.html" class="fl"
+                                           target="_blank">Linux职场</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/yunweigangwei.html" class="fl"
+                                           target="_blank">运维岗位</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaimysql.html" class="fl"
+                                           target="_blank">老男孩MySQL</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>13</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>10000+</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>3</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>5</b>
+                    </span>
+                                <span class="actions fr">2019-07-08</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a href="https://blog.51cto.com/oldboy/2418103">企业招聘对学历要求越来越高，低学历者如何逆袭？</a>
+                                </h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2418103">一、为什么企业招聘工程师对学历要求越来越高了?1.1
+                                    企业招聘的真实数据展示请伙伴们自行打开招聘站http://www.zhaopin.com，分别搜索java开发、Python开发、Linux运维等岗位，然后对比下企业对学历的要求。老男孩老师查的结论：开发类企业招聘80%以上要求本科学历，Linux运维约50%要求本科学历，不看不知道，一看吓一跳，学历只是基本的，还得经过技术等等百里挑一的面试才</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaiit.html" class="fl"
+                                           target="_blank">老男孩it</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaisixiang.html" class="fl"
+                                           target="_blank">老男孩思想</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaigo.html" class="fl"
+                                           target="_blank">老男孩go</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaimysql.html" class="fl"
+                                           target="_blank">老男孩MySQL</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaiyunwei.html" class="fl"
+                                           target="_blank">老男孩运维</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>16</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>10000+</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>4</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>5</b>
+                    </span>
+                                <span class="actions fr">2019-07-08</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a
+                                        href="https://blog.51cto.com/oldboy/2392486">一个人成功，一定是做对了什么事情才成功的!</a></h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2392486">一个人成功，一定是作对了什么事情，符合了某些做事的规律才成功的，可能他自己都不察觉！——老男孩语录老男孩解码：每个人做事都是为自己的信念和价值观服务的，即只有满足人的信念和价值观的需要，这个人才会发挥自己的能力，即信念和价值观决定一个人的能力是否能够得以发挥。比如减肥事宜，众所周知，让一个胖人减肥太难了，没有多少人能够轻易减肥成功，凡是能减肥成功的人一定是重塑了自己价值观的人，即知道减肥后对自己来</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhai.html" class="fl"
+                                           target="_blank">老男孩</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaigo.html" class="fl"
+                                           target="_blank">老男孩go</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaisixiang.html" class="fl"
+                                           target="_blank">老男孩思想</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaimysql.html" class="fl"
+                                           target="_blank">老男孩MySQL</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaipython.html" class="fl"
+                                           target="_blank">老男孩Python</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>9</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>3658</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>1</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>2</b>
+                    </span>
+                                <span class="actions fr">2019-05-10</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a
+                                        href="https://blog.51cto.com/oldboy/2384960">那些年学习Linux，你被坑过的故障集合？</a></h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2384960">一. 文件和目录类1.1 File exist
+                                    文件已经存在[root@oldboyedu59 ~]# mkdir   /data   /lidao  [root@oldboyedu59 ~]# mkdir   /data   /lidao  mkdir: cannot create directory ‘/data’: File existsmkdir: cannot create direct</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhai.html" class="fl"
+                                           target="_blank">老男孩</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaimysql.html" class="fl"
+                                           target="_blank">老男孩MySQL</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaigo.html" class="fl"
+                                           target="_blank">老男孩go</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/linuxyunwei.html" class="fl"
+                                           target="_blank">Linux运维</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/linuxmianshiti.html" class="fl"
+                                           target="_blank">Linux面试题</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>6</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>10000+</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>1</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>2</b>
+                    </span>
+                                <span class="actions fr">2019-04-26</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a
+                                        href="https://blog.51cto.com/oldboy/2381254">大龄IT工程师如何高薪？未来发展出路在哪</a></h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2381254">大龄实施岗位运维，学历低工作经验多，还能获得高薪么？什么是实施岗位运维？实施岗位运维属于外包公司的员工，有的可能会驻场，有的会进入企业若干天把软件、服务配置好，然后运维出问题提供服务。大龄
+                                    IT 工程师如何还能高薪，未来的发展出路在哪？ 中国 2019
+                                    年经济下行，企业倒闭、裁员，远比我们看到的听到的要严重的多。企业能找到更多的客户，实施运维工资就能涨。如果企业接不到项目，就无法给你涨薪，还可能裁</a></p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhailinux.html" class="fl"
+                                           target="_blank">老男孩Linux</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaipeixun.html" class="fl"
+                                           target="_blank">老男孩培训</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaiit.html" class="fl"
+                                           target="_blank">老男孩it</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaisixiang.html" class="fl"
+                                           target="_blank">老男孩思想</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/zhibogongkaike.html" class="fl"
+                                           target="_blank">直播公开课</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>4</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>7632</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>1</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>1</b>
+                    </span>
+                                <span class="actions fr">2019-04-19</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a
+                                        href="https://blog.51cto.com/oldboy/2363075">为什么你设定的目标最后实现往往都会打折扣？</a></h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2363075">如果不全力学习和拼搏，你获得的实际结果和预期总会有较大差距！一一老男孩老男孩的亲身体验，假设你设定了要实现的目标和要努力的程度，等到你实现了设定的目标后，你会发现，你的付出的实际努力，比当初自己想象的努力至少可能要放大几倍以上，这是人们在本能上往往会高看高估自己的能力导致。唐太宗《帝范》卷四：“取法于上，仅得为中，取法于中，故为其下。”总思是，追求上等的，可以得到中等的，追求中等的，只能得到下等。</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaigo.html" class="fl"
+                                           target="_blank">老男孩go</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaijiaoyu.html" class="fl"
+                                           target="_blank">老男孩教育</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaiit.html" class="fl"
+                                           target="_blank">老男孩IT</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaisixiang.html" class="fl"
+                                           target="_blank">老男孩思想</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/hexinsixiang.html" class="fl"
+                                           target="_blank">核心思想</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>6</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>2463</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>0</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>1</b>
+                    </span>
+                                <span class="actions fr">2019-03-14</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a href="https://blog.51cto.com/oldboy/2358559">职场思想分享010 |
+                                    论到底什么是自私和无私？</a></h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2358559">今天为大家分享老男孩核心思想108招之第010招：论到底什么是自私和无私？别让自私和懒惰，挡住自己发展的路！——老男孩核心思想能控制住懒惰和自私的人，就必定是优秀的人。——老男孩核心思想什么是自私？自私通常是以“自我中心”，基于个人利益需求做出的行为及反应，自私是指个体面临自己利益与对方冲突时，会不计对方损失，以满足自己利益为主，同时大多数自私者在进行自私行为的同时，通常能察觉自己的行为可能损及别</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaiit.html" class="fl"
+                                           target="_blank">老男孩it</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaipeixun.html" class="fl"
+                                           target="_blank">老男孩培训</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaisixiang.html" class="fl"
+                                           target="_blank">老男孩思想</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaihexinmingling.html" class="fl"
+                                           target="_blank">老男孩核心命令</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/zhichangsixiang.html" class="fl"
+                                           target="_blank">职场思想</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>4</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>2789</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>0</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>0</b>
+                    </span>
+                                <span class="actions fr">2019-03-05</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a href="https://blog.51cto.com/oldboy/2354576">职场思想分享009 |
+                                    一个人对待工作的态度决定其成绩的多少？</a></h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2354576">今天为大家分享老男孩核心思想108招之第009招：一个人对待工作的态度决定其成绩的多少？来自哈佛大学的一个研究发现：一个人的成功，85%取决于他积极的态度，而只有15%取决于他的智力和所知道的事实与数字。可以说，当我们在工作中没有更多更明显的优势时，那么积极的工作态度就是我们最大的资本。一个人的工作态度折射着人生态度，而人生态度决定一个人一生的成就。一个心态非常积极的人，无论他从事什么工作，他都会</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaigo.html" class="fl"
+                                           target="_blank">老男孩go</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhailinux.html" class="fl"
+                                           target="_blank">老男孩Linux</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaisixiang.html" class="fl"
+                                           target="_blank">老男孩思想</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaipeixun.html" class="fl"
+                                           target="_blank">老男孩培训</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaiit.html" class="fl"
+                                           target="_blank">老男孩it</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>5</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>2796</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>0</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>2</b>
+                    </span>
+                                <span class="actions fr">2019-02-25</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a href="https://blog.51cto.com/oldboy/2351875">职场思想分享008 |
+                                    有钱重要还是值钱重要？</a></h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2351875">今天为大家分享老男孩核心思想108招之第008招：有钱重要还是值钱重要？有钱重要还是值钱重要？这个是一个很有意思的话题。这里老男孩老师，可以先给这个话题下个小结论：一个人有钱，但不一定能值钱；但如果一个人值钱，就一定能有钱。——老男孩一个人有钱，但不一定值钱因为很多有钱的人可能不是利用自身值钱赚来的钱，例如富二代、官二代、暴发户，这样的人虽然有钱，但可能就不值钱。但是，无论这个人通过什么手段赚的钱</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaigo.html" class="fl"
+                                           target="_blank">老男孩go</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaimysql.html" class="fl"
+                                           target="_blank">老男孩MySQL</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaipython.html" class="fl"
+                                           target="_blank">老男孩python</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaisixiang.html" class="fl"
+                                           target="_blank">老男孩思想</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaijiaoyu.html" class="fl"
+                                           target="_blank">老男孩教育</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>5</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>2347</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>1</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>2</b>
+                    </span>
+                                <span class="actions fr">2019-02-19</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a href="https://blog.51cto.com/oldboy/2345886">职场思想分享007 |
+                                    过程往往比结果更重要</a></h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2345886">今天为大家分享老男孩核心思想108招之第007招：过程往往比结果更重要学习要尽量重过程而非结果，只要学习方法是得当的，加上持久地练习，形成良好的学习习惯后，自然就有好的结果！——老男孩我们在工作中听得最多的可能就是“结果导向”一词，凡事都要问问自己想要什么结果，凡事要结果导向，要的是结果不是过程，要的是有效果不是有道理。在职场上，我们做事有时候会是按照上面的原则去做，但是，在学习的时候往往只有过程</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaiit.html" class="fl"
+                                           target="_blank">老男孩IT</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaimysql.html" class="fl"
+                                           target="_blank">老男孩MySQL</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaipeixun.html" class="fl"
+                                           target="_blank">老男孩培训</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaijiaoyu.html" class="fl"
+                                           target="_blank">老男孩教育</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaisixiang.html" class="fl"
+                                           target="_blank">老男孩思想</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>7</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>2371</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>1</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>0</b>
+                    </span>
+                                <span class="actions fr">2019-01-23</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a href="https://blog.51cto.com/oldboy/2343146">大萧条时期让企业起死回生的5个秘诀|请转发给你的老板</a>
+                                </h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2343146">稻盛和夫:大萧条时期让企业起死回生的5个秘诀能够把本文第一个发给老板或发到公司群里的人一定是企业的核心员工，因为这样的员工都是潜意识里心系公司发展的人，特别是在企业危机之时。——老男孩思想大环境萧条意味着艰难和痛楚，但如果能熬过萧条，就会成为企业再次飞跃的台阶。不景气的程度越严重，越是要以积极开朗的态度面对，全员团结一致，切磋琢磨，集思广益，竭尽全力去突破困境。本文讲解的是日本知名企业稻盛和夫在过</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/jingjixiaxing.html" class="fl"
+                                           target="_blank">经济下行</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaisixiang.html" class="fl"
+                                           target="_blank">老男孩思想</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>4</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>3769</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>0</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>1</b>
+                    </span>
+                                <span class="actions fr">2019-01-15</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+
+                                <a class="pic" href="https://blog.51cto.com/oldboy/2342521" target="_blank">
+                                    <img src="http://s1.51cto.com/images/20190114/1547453205955861.png?x-oss-process=image/resize,m_fixed,h_70,w_116"
+                                         alt="《跟老男孩学习Linux运维：MySQL入门与提高实践》一书勘误">
+                                </a>
+                                <h3 class="title"><a href="https://blog.51cto.com/oldboy/2342521">《跟老男孩学习Linux运维：MySQL入门与提高实践》一书勘误</a>
+                                </h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2342521">老男孩老师第五本个人Linux公开出版书籍！勘误更新：2019.1.14
+                                    P170下数第11行：原：mysqldump -B --master-data=2 |gzip &gt;$bak_path/${dbname}_${tablename}_$(date
+                                    +%F).sql.gz新：     mysqldump -B --master-data=2 $dbn</a></p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/mysql.html" class="fl" target="_blank">MySQL</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaijjiaoyu.html" class="fl"
+                                           target="_blank">老男孩j教育</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>5</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>10000+</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>1</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>2</b>
+                    </span>
+                                <span class="actions fr">2019-01-14</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a href="https://blog.51cto.com/oldboy/2339253">资深专家支招：2019年Linux运维工程师的高薪出路在哪？</a>
+                                </h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2339253">资深专家支招：2019年Linux运维工程师的高薪出路在哪？——优秀运维工程师的思维和日常工作内容早在2015年国家就提出了“供给侧”改革思想，简言之，就是告诉企业里的Linux运维工程师要从以往平时人肉部署各种业务环境，处理各种故障（负载高、CPU高、服务宕机、被***），每天火烧眉毛、焦头烂额苦劳多功劳少的工作模式切换到高效的工作模式了。优秀的Linux运维工程师的核心工作，不是上面描述的那些，</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/2019gaoxinlaonanhaijiaoyulinuxpei.html"
+                                           class="fl" target="_blank">2019高薪老男孩教育Linux培</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>12</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>6407</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>4</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>3</b>
+                    </span>
+                                <span class="actions fr">2019-01-05</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a href="https://blog.51cto.com/oldboy/2338978">职场思想分享006 |
+                                    努力重要还是选择重要？</a></h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2338978">今天为大家分享老男孩核心思想108招之第006招：努力重要还是选择重要？努力是做好一件事的必备过程（包括做选择），而选择则是确定做哪件事情，是决定要不要做这件事情。到底努力重要还是选择重要，这是一个很难以回答的问题，因为这是一个没有明确对错结论的主题，其实这句话很适合学生辩论用。如果拿一辆汽车做比喻，那么选择类似汽车的方向盘，它掌握着汽车行使的方向，而努力有点类似汽车的发动机，它是汽车行使的动力，</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaigo.html" class="fl"
+                                           target="_blank">老男孩go</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhailinux.html" class="fl"
+                                           target="_blank">老男孩Linux</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaisixiang.html" class="fl"
+                                           target="_blank">老男孩思想</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaihexinsixiang.html" class="fl"
+                                           target="_blank">老男孩核心思想</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaifenxiang.html" class="fl"
+                                           target="_blank">老男孩分享</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>5</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>2384</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>0</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>1</b>
+                    </span>
+                                <span class="actions fr">2019-01-04</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a
+                                        href="https://blog.51cto.com/oldboy/2056437">资深IT专家年终总结述职报告（超4万访问）</a></h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2056437"> 整理文档，偶然发现了老男孩于10年前的年终工作述职报告，又到了年底了，希望这篇报告能发挥余热对大家写述职报告有帮助。 
+                                            时间过的飞快，转眼间，来XXX一年出头了。这一年来让我感受了很多，经历了很多，学到了很多。    在领导的带领下，在同学们的配合和帮助下，我不</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhai.html" class="fl"
+                                           target="_blank">老男孩</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/shuzhibaogao.html" class="fl"
+                                           target="_blank">述职报告 </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>111</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>10000+</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>44</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>58</b>
+                    </span>
+                                <span class="actions fr">2018-01-01</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a href="https://blog.51cto.com/oldboy/2330141">趣谈 |
+                                    Python为什么受欢迎的本质，知道的人寥寥无几？</a></h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2330141">世间有一种生物，人称“程序猿”or“攻城狮”对于程序员的趣闻，莫过于“男程序员都是秃头，女程序员满脸痘痘”“城未攻，发先掉”事实真如上所说的那样吗？那就不得而知了前一阵关于资深程序员面试的新闻又引起了一阵调侃风IT行业那么多的编程语言学习之后会是怎样呢？深入了解了解那些编程语言之父们头顶雨林是否茂盛以及他们的丰功伟绩没准能发现什么vb.net之父&nbsp;
+                                    头顶茂密指数：☆☆☆☆☆Bling B</a></p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/pythonxuexi.html" class="fl"
+                                           target="_blank">python学习</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/pythonzidonghua.html" class="fl"
+                                           target="_blank">python自动化</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaipython.html" class="fl"
+                                           target="_blank">老男孩python</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>10</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>4545</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>0</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>5</b>
+                    </span>
+                                <span class="actions fr">2018-12-13</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a href="https://blog.51cto.com/oldboy/2326573">职场思想分享005 |
+                                    别让背后抱怨说别人坏话成为聊天习惯</a></h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2326573">&nbsp; &nbsp; &nbsp;今天为大家分享老男孩核心思想108招之第005招：别让背后抱怨说别人坏话成为聊天习惯有问题要当面说，和相关人直接反馈解决问题，这是正确对待问题的方式。切记不要背后抱怨，说别人坏话。如果背后非要说别人话，就一定要多说别人好话，这样别人听到或知道了，可能会成为你的好朋友，甚至你的人脉。如果你经常背后抱怨、说别人坏话，不但没得做朋友了，还可能被报复，多个冤家多堵墙</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaisixiang.html" class="fl"
+                                           target="_blank">老男孩思想</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaijiaoyu.html" class="fl"
+                                           target="_blank">老男孩教育</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhailinux.html" class="fl"
+                                           target="_blank">老男孩Linux</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>5</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>1996</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>0</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>0</b>
+                    </span>
+                                <span class="actions fr">2018-12-05</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a href="https://blog.51cto.com/oldboy/2321792">老男孩：Linux运维岗位强于开发岗位的6点优势</a>
+                                </h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2321792"> 现实中很多网友，包括大学生对编程开发了解很多，但对Linux运维了解较少，甚至一些从事Linux基础运维的人员也会觉得开发牛逼，运维就是背黑锅（如何不背黑锅，看老男孩的以后文章）的，运维等于背锅侠。那么，老男孩老师就给大家讲讲老男孩眼中Linux运维人员的好处，让大家重新认识下运维岗位的魅力吧。1、做运维可以认识更多人脉，同时也被更多人认识。相对开发来讲，运维岗位主要以服务为主，会和更</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/linux.html" class="fl" target="_blank">Linux</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/yunwei.html" class="fl"
+                                           target="_blank">运维</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/youshi.html" class="fl"
+                                           target="_blank">优势</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/zhiyeguihua.html" class="fl"
+                                           target="_blank">职业规划 </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>13</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>7512</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>2</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>9</b>
+                    </span>
+                                <span class="actions fr">2018-11-25</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a href="https://blog.51cto.com/oldboy/2318837">职场思想分享004 |
+                                    为什么你学东西记不住，答案都在这里了</a></h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2318837">第004招
+                                    为什么你学东西记不住，答案都在这里了今天为大家分享老男孩核心思想108招之第004招：为什么你学东西记不住，答案都在这里了。大家有没有觉得，无论是工作还是休息，因为自身追求也或者是未来的危机，你们自己也在持续努力的学习新知识，但最终结果是绝大多数都没记住、没学会（工作经验也没涨太多），更不用说举一反三了。而在用的时候也经常拿不出来，讲的时候不会说，不能很好地表达出来。过很久以后，发现自</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaijiaoyu.html" class="fl"
+                                           target="_blank">老男孩教育</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/gaoxinsixiang.html" class="fl"
+                                           target="_blank">高薪思想</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaihexin.html" class="fl"
+                                           target="_blank">老男孩核心</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/zhichangsixiang.html" class="fl"
+                                           target="_blank">职场思想</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>8</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>5871</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>2</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>6</b>
+                    </span>
+                                <span class="actions fr">2018-11-19</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a href="https://blog.51cto.com/oldboy/2316317">职场思想分享003 |
+                                    如何能让自己说话办事考虑的更周到？</a></h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2316317">今天为大家分享老男孩核心思想108招之第003招：如何能让自己说话办事考虑的更周到？各位网友，大家好，我是老男孩IT教育创始人老男孩老师，今天我给大家分享的是老男孩高薪思想108招的第03招，题目是如何能让自己说话办事考虑的更周到！无论是在生活中还是在工作中，你是不是发现有很多人说话办事思考的很片面、偏激，让人不放心，给人感觉不踏实不靠谱，但是他还振振有词，觉得自己说的做的都很正确，而有些人不但说</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaisixiang.html" class="fl"
+                                           target="_blank">老男孩思想</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/gaoxinsixiang.html" class="fl"
+                                           target="_blank">高薪思想</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/itren34sui.html" class="fl"
+                                           target="_blank">IT人34岁</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/linuxyunwei.html" class="fl"
+                                           target="_blank">Linux运维</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>4</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>2256</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>1</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>0</b>
+                    </span>
+                                <span class="actions fr">2018-11-13</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a href="https://blog.51cto.com/oldboy/2311622">职场思想分享002 |
+                                    入职第一个月工资这样花，一年内工资至少再涨50%！</a></h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2311622">今天为大家分享老男孩核心思想108招之第002招：入职第一个月工资这样花，一年内工资至少再涨50%！——如果你不是第一次工作，那就按跳槽后入职的第一个月计算吧！不管生活多么的困难，新人入社会以后入职后第一个月发的工资，留够基本生活费，剩下所有的钱按照下面思路第一时间内都花掉，一分不要剩：1、一定要请你身边的同事吃顿饭，感谢大家对你的信任和支持！工作中有同事和领导的支持，会让你尽快在公司立足和站稳脚</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhaisixiang.html" class="fl"
+                                           target="_blank">老男孩思想</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/gaoxinsixiang.html" class="fl"
+                                           target="_blank">高薪思想</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/itren34sui.html" class="fl"
+                                           target="_blank">IT人34岁</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/zhichang.html" class="fl" target="_blank">职场</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>10</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>4322</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>3</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>7</b>
+                    </span>
+                                <span class="actions fr">2018-11-01</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a href="https://blog.51cto.com/oldboy/2310400">职场思想分享001 |
+                                    有多种选择才叫有能力</a></h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2310400">今天为大家分享老男孩核心思想108招之第001招-有多种选择才叫有能力-做任何事情如果都能有多种选择，你就会很轻松，如果不能有多种选择或者没有选择就会很痛苦。例如：汇报领导交代的任务提供解决方案时就要给领导多种选择，如果只有一种选择，老大没得选，不叫有能力；如果有两种选择，老大左右为难，也不叫有能力，只有给出三种或更多选择，才叫有能力。2018俄罗斯世界杯球队踢足球也是如此，让己方拿球的球员选择越</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/zhichangsixiang.html" class="fl"
+                                           target="_blank">职场思想</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhai.html" class="fl"
+                                           target="_blank">老男孩</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>5</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>1912</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>0</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>1</b>
+                    </span>
+                                <span class="actions fr">2018-10-29</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a
+                                        href="https://blog.51cto.com/oldboy/2308749">高效数据同步工具rsync服务部署详解（下）</a></h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2308749">三、rsycn配置文件详解 rsyncd.conf1 部分知识补充1.1 配置文件内容参考资料man rsyncd.conf1.2 配置文件内容总结模块之上内容为全局变量信息模块之下内容为局部变量信息说明：无论是全局变量发生变化，还是局部变量发生变化，都建议重启rsync服务使配置生效。2 利用/etc/init.d/启动rsync服务方</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/linuxyunwei.html" class="fl"
+                                           target="_blank">Linux运维</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/shujutongbu.html" class="fl"
+                                           target="_blank">数据同步</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/rsyncfuwubushu.html" class="fl"
+                                           target="_blank">rsync服务部署</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>7</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>4289</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>10</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>0</b>
+                    </span>
+                                <span class="actions fr">2018-10-25</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a
+                                        href="https://blog.51cto.com/oldboy/2307393">高效数据同步工具rsync服务部署详解（上）</a></h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2307393">一、rsync软件介绍1什么是rsyncrsync是一款开源的、快速的、多功能的、可实现全量及增量的本地或远程数据同步备份的优秀工具。http://www.samba.org/ftp/rsync/rsync.html全量：将全部数据，进行传输覆盖增量：只传输差异部分的数据2实现增量复制的原理Rsync通过其独特的“quickcheck”算法，实现增量传输数据[root@backup~]#manrs</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/linux.html" class="fl" target="_blank">Linux</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/yunwei.html" class="fl"
+                                           target="_blank">运维</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/rsync.html" class="fl" target="_blank">rsync</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/shujutongbu.html" class="fl"
+                                           target="_blank">数据同步</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>13</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>7785</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>15</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>5</b>
+                    </span>
+                                <span class="actions fr">2018-10-22</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+
+                                <a class="pic" href="https://blog.51cto.com/oldboy/2161296" target="_blank">
+                                    <img src="http://s1.51cto.com/images/20180817/1534498916140796.jpg?x-oss-process=image/resize,m_fixed,h_70,w_116"
+                                         alt="爱情是男人事业的核动力，七夕和大家分享！">
+                                </a>
+                                <h3 class="title"><a
+                                        href="https://blog.51cto.com/oldboy/2161296">爱情是男人事业的核动力，七夕和大家分享！</a></h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2161296">没有人能随随便便成功，大部分成功的人都是曾经遭遇了不同寻常的痛苦所致，马云、俞敏洪都是如此；老男孩也是因为追女朋友失败，从而激发了创业证明自己的欲望！——老男孩自述老男孩的粉丝们，赶紧给自己安装上“核动力”装置，高速起飞吧，哈哈！</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/qixi1.html" class="fl"
+                                           target="_blank">七夕</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/qingshu.html" class="fl" target="_blank">情书</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/laonanhai.html" class="fl"
+                                           target="_blank">老男孩</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag reprint fl">转载</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>13</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>4715</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>3</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>3</b>
+                    </span>
+                                <span class="actions fr">2018-08-17</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+
+                                <a class="pic" href="https://blog.51cto.com/oldboy/1669526" target="_blank">
+                                    <img src="http://s3.51cto.com/wyfs02/M00/6F/24/wKiom1WSjjzCryW1ABJ8byQ6YfQ917.gif"/></a></p>
+                                <p><span?x-oss-process=image/resize,m_fixed,h_70,w_116"
+                                    alt="非常有趣linux图形及动画显示-菜鸟提升兴趣必看！">
+                                    </a>
+                                <h3 class="title"><a href="https://blog.51cto.com/oldboy/1669526">非常有趣linux图形及动画显示-菜鸟提升兴趣必看！</a>
+                                </h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/1669526">整理发布下CENTOS6/7下非常有趣linux图形及动画，希望增加下linux的趣味性，让小伙伴们更加喜爱上linux这个极具魅力的操作系统。（一）生成奔跑着的火车有趣动画：1.安装epel源CENTOS6/7根据系统二选一#wget&nbsp;-O&nbsp;/etc/yum.repos.d/epel.repo&nbsp;http://mirrors.aliyun.com/repo/epel-</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/linuxquweidonghua.html" class="fl"
+                                           target="_blank">linux趣味动画</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/benpaodehuoche.html" class="fl"
+                                           target="_blank">奔跑的火车</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>32</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>10000+</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>15</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>28</b>
+                    </span>
+                                <span class="actions fr">2015-06-30</span>
+
+                            </div>
+
+                        </div>
+                        <div class="common-article-list">
+                            <div class="clearfix graphic">
+                                <h3 class="title"><a href="https://blog.51cto.com/oldboy/2155931">CentOS7.5下开发systemctl管理的自定义Rsync启动服务程序</a>
+                                </h3>
+                                <p class="dec"><a href="https://blog.51cto.com/oldboy/2155931">CentOS7.5下开发systemctl管理的Rsync服务脚本和配置1.1
+                                    systemctl知识简介从CentOS7
+                                    Linux开始，系统里的网络服务启动已经从传统的service改成了systemctl（一个systemd工具，主要负责控制systemd系统和服务管理器。），管理开机自启动的命令也从chkconfig改为了systemctl，由systemctl一个命令代替了CentOS7</a>
+                                </p>
+                                <div class="tag-box">
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/centos75.html" class="fl" target="_blank">Centos7.5</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/systemctl.html" class="fl"
+                                           target="_blank">systemctl</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/service.html" class="fl" target="_blank">service</a>
+                                    </div>
+                                    <div class="tag-item">
+                                        <a href="https://blog.51cto.com/topic/chkconfig.html" class="fl"
+                                           target="_blank">chkconfig</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix messages">
+                                <span class="tag up fl">置顶</span> <span class="tag original fl">原创</span>
+                                <span class="nums fl " style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>11</b>
+                    </span>
+                                <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>10000+</b>
+                        </span>
+
+                                <span class="nums fl">
+                        <i class="iconblog blogshoucang"></i>收藏<b>8</b>
+                    </span>
+                                <span class="nums fl">
+                        <i class="iconblog blogpinglun1"></i>评论<b>4</b>
+                    </span>
+                                <span class="actions fr">2018-08-07</span>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="common-article-listbox">
+                        <script id="articleListboxScript" type="text/html">
+                            {{each list value index}}
+                            <div class="common-article-list">
+                                <div class="clearfix graphic">
+                                    {{if value.img_urls && value.img_urls.length>0}}
+                                    <a href="{{value.url}}" class="pic" target="_blank">
+                                        <img src="{{value.img_urls[0]}}" alt="{{value.title}}">
+                                        {{if value.img_urls.length>1}}
+                                        <span>3图</span>
+                                        {{/if}}
+                                    </a>
+                                    {{/if}}
+                                    <h3 class="title"><a href="{{value.url}}" target="_blank">{{value.title}}</a></h3>
+                                    <p class="dec"><a href="{{value.url}}" target="_blank">{{value.abstract}}</a></p>
+                                </div>
+                                <div class="clearfix messages">
+                                    {{if value.top_time != '0'}}
+                                    <span class="tag up fl">置顶</span>
+                                    {{/if}}
+                                    {{if value.blog_type == 1}}
+                                    <span class="tag original fl">原创</span>
+                                    {{else if value.blog_type == 2}}
+                                    <span class="tag reprint fl">转载</span>
+                                    {{else if value.blog_type == 3}}
+                                    <span class="tag translation fl">翻译</span>
+                                    {{/if}}
+                                    {{if value.level == 20}}
+                                    <span class="tag tuijian fl">推荐</span>
+                                    {{/if}}
+                                    <span class="nums fl {{value.is_praise}}" style="margin-left: 17px;">
+                        <i class="iconblog blogdianzan" style="font-size:16px"></i>点赞<b>{{value.apraise_num}}</b>
+                    </span>
+                                    {{if value.pv == '10000+'}}
+                                    <span class="nums fl">
+                        <i class="iconblog blogyuedu1"></i>阅读<b>10000+</b>
+                    </span>
+                                    {{else}}
+                                    <span class="nums fl">
+                            <i class="iconblog blogyuedu1"></i>阅读<b>{{value.pv}}</b>
+                        </span>
+                                    {{/if}}
+
+                                    <span class="nums fl">
+                            <i class="iconblog blogshoucang"></i>收藏<b>{{value.favorite_num}}</b>
+                        </span>
+                                    <span class="nums fl">
+                            <i class="iconblog blogpinglun1"></i>评论<b>{{value.comments_num}}</b>
+                        </span>
+                                    <span class="actions fr">{{value.add_time_str}}</span>
+                                    {{if value.delete_url != ''}}
+                                    <span class="actions fr delete" data-id="{{value.blog_id}}"
+                                          data-url="{{value.delete_url}}">删除</span>
+                                    {{/if}}
+                                    {{if value.edit_url != ''}}
+                                    <a class="actions fr" href="{{value.edit_url}}" target="_blank">编辑</a>
+                                    {{/if}}
+
+                                </div>
+                            </div>
+                            {{/each}}
+                            {{if pagination !=''}}
+                            {{@pagination}}
+                            {{/if}}
+                        </script>
+                    </div>
+                    <ul class="pagination">
+                        <li class="first" style="display: none;"><span>首页</span></li>
+                        <li class="prev" style="display: none;"><span></span></li>
+                        <li class="active"><b>1</b></li>
+                        <li><a href="https://blog.51cto.com/oldboy/p_2" data-page="1">2</a></li>
+                        <li><a href="https://blog.51cto.com/oldboy/p_3" data-page="2">3</a></li>
+                        <li><a href="https://blog.51cto.com/oldboy/p_4" data-page="3">4</a></li>
+                        <li><a href="https://blog.51cto.com/oldboy/p_5" data-page="4">5</a></li>
+                        <li><a href="https://blog.51cto.com/oldboy/p_6" data-page="5">6</a></li>
+                        <li><a href="https://blog.51cto.com/oldboy/p_7" data-page="6">7</a></li>
+                        <li><a href="https://blog.51cto.com/oldboy/p_8" data-page="7">8</a></li>
+                        <li class="next"><a href="https://blog.51cto.com/oldboy/p_2" data-page="1"></a></li>
+                        <li class="last"><a href="https://blog.51cto.com/oldboy/p_20" data-page="19"></a></li>
+                        <li class="last" style="display: none;"><span>共598条记录</span></li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script>
+     var conditionparams = {"domain":"oldboy"};
+     var shareimgSrc =  'https://blog.51cto.com/qr/qr-url?url=https%3A%2F%2Fblog.51cto.com%2Foldboy'    
+
+    window._bd_share_config={
+    "common":{
+      "bdText":"",
+      "bdDesc":$("#abstract_bdshare").text(),
+      "bdMini":"2",
+      "bdMiniList":false,
+      "bdPic":"https://s4.51cto.com/images/201710/25/bd540a4f14d822f6e69087758699358b.jpg",
+      "bdStyle":"0",
+      "bdSize":"16"
+    },
+    "share":{}
+  };
+  
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+  setTimeout(function(){
+  	$('.bdsharebuttonbox a').removeAttr('title')
+  },1000);
+  var BLOG_URL=`https://blog.51cto.com/`;
+
+ 
+  // 分类列表
+  var arr=[]
+
+  var pageNum=0
+  var classificationBox=$('#classification_001')
+  var addClassification=function(type){
+     var classificationHtml="";
+     pageNum=pageNum+1;
+     var len=type?arr.length:(arr.length<5?arr.length:5)
+     for(var i=((pageNum-1)*5);i<len;i++){
+      classificationHtml=classificationHtml+'<li class="Classification_648" data-index="'+i+'"> <span class="Classification_648_title" data-index="'+i+'"># '+arr[i].name+'</span> <span>'+arr[i].num+'篇</span></li>'
+     }
+     classificationBox.append(classificationHtml)
+     if(type||arr.length<=5){
+      document.getElementById('Classification_648_add').style.display="none"
+     }
+  }
+  document.getElementById("classification_001").addEventListener("click",function(event){
+    //  var target = event.target;
+     //防止父元素ul也触发事件
+     var index=event.target.getAttribute('data-index')
+     window.open(`${BLOG_URL}${arr[index].domain}/category${arr[index].custom_id}.html`)
+   }) 
+   document.getElementById("Classification_648").style.display="none" 
+   console.log('',`oldboy`,"2561410");
+   $.post(BLOG_URL+'blogger/cate-list',{user_id:'',domain:`oldboy`,blog_user_id:"2561410"},function(res){
+   if(res.status===1){
+     if(res.data.length>0){
+      arr=res.data;
+       addClassification()
+       document.getElementById("Classification_648").style.display="block" 
+
+     }
+    
+   }
+  })
+  addSwiper=function(){
+    var arr=$('.swiper-container11')
+    var data={}
+      for(var i=0;i<arr.length;i++){
+       data[`swer${i}`]=new Swiper(arr[i],{
+          // loop:true,
+          slidesPerView:'auto',
+          prevButton:(`.user-perv-${i}`),
+          nextButton:(`.user-next-${i}`),
+          speed:300,
+        //其他设置
+       });  
+      }
+    }
+
+    // addSwiper()
+
+
+    </script>
+</div>
+<script src="https://static1.51cto.com/edu/blog/js/template-web.js|v=422383d018,blog/js/bloger.js|v=de7f6eb817,blog/js/share/share.js|v=8958856a0b"></script>
+<!-- if publish show -->
+<div class="Footer">
+    <div class="Page ">
+        <div class="fl">
+            <a href="https://blog.51cto.com/" class="Logo"><img
+                    src="https://static4.51cto.com/edu/blog/images/logonew4.png" alt="51CTO博客" width="214"
+                    title="51CTO博客"></a>
+            <p class="copy">Copyright &copy; 2005-2021 <a href="http://www.51CTO.com" target="_blank">51CTO.COM</a>
+                版权所有 京ICP证060544号</p>
+        </div>
+
+        <dl class="foot_ab fr">
+            <dt>关于我们</dt>
+            <dd>
+                <table class="aboutList">
+                    <tr>
+                        <td><a href="https://blog.51cto.com/51ctoblog" target="_blank">官方博客</a></td>
+                        <td><a href="https://blog.51cto.com/51ctoblog/2643377" target="_blank">意见反馈</a></td>
+                        <td><a href="http://www.51cto.com/about/aboutus.html" target="_blank">了解我们</a></td>
+                        <td><a href="https://blog.51cto.com/nav" target="_blank">全部文章</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="javascript:;" class="zhiCustomBtn">在线客服</a></td>
+                        <td><a href="https://blog.51cto.com/qa/index" target="_blank">博客问答</a></td>
+                        <td><a href="http://www.51cto.com/about/map.html" target="_blank">网站地图</a></td>
+                        <td><a href="https://blog.51cto.com/topic/all" target="_blank">热门标签</a></td>
+                    </tr>
+                </table>
+            </dd>
+        </dl>
+
+
+        <dl class="foot_link fr">
+            <dt>友情链接</dt>
+            <dd>
+
+                <table class="aboutList-2">
+                    <tr>
+                        <td><a href="https://harmonyos.51cto.com?blogsitemap" target="_blank">51CTO鸿蒙社区</a></td>
+                        <td><a href="https://edu.51cto.com/" target="_blank">51CTO学堂</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.51cto.com" target="_blank">51CTO</a></td>
+
+                    </tr>
+                </table>
+            </dd>
+        </dl>
+
+    </div>
+</div>
+
+
+<script>
+  $(".gotop").click(function () {
+    $(window).scrollTop(0)
+  })
+
+
+</script>
+
+
+<script type='text/javascript'>
+  var _vds = _vds || [];
+  window._vds = _vds;
+  (function () {
+    _vds.push(['setAccountId', '8c51975c40edfb67']);
+    (function () {
+      var vds = document.createElement('script');
+      vds.type = 'text/javascript';
+      vds.async = true;
+      vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'assets.growingio.com/vds.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(vds, s);
+    })();
+  })();
+  //document.write(decodeURI("%3Cscript src='https://tongji.51cto.com/frontend/tj.gif' type='text/javascript'%3E%3C/script%3E"));
+
+
+</script>
+
+<script>
+  var uid = '';
+  var BLOG_URL = 'https://blog.51cto.com/';
+
+
+</script>
+
+<script src="https://static4.51cto.com/edu/blog/js/jquery.cookie.js"></script>
+<script src="https://static3.51cto.com/edu/blog/js/time-on-page.js" charset="utf-8"></script>
+<script src="https://static2.51cto.com/edu/blog/js/baidu_statistics.js" charset="utf-8"></script>
+
+<script>
+
+      (function (w, d, e, x) {
+        w[e] = function () {
+          w.cbk = w.cbk || []
+          w.cbk.push(arguments);
+        }
+        x = d.createElement('script');
+        x.async = true;
+        x.id = 'zhichiScript';
+        x.className = 'zhiCustomBtn', //该class可自行设置，只需要在使用的自定义入口上同名即可
+          x.src = 'https://chat.sobot.com/chat/frame/v2/entrance.js?sysnum=a8d9379eaf884b4f81a48348979e3b1a';
+        d.body.appendChild(x);
+      })(window, document, 'zc');
+      zc('config', {
+        //设置自定义按钮生效
+        custom: true,
+        width: 360,
+        height: 500,
+        color:'4285f4',
+      })
+
+
+</script>
+
+
+<script>
+    (function(){
+        var wh=$(window).height(),fh=$('.Footer').outerHeight(true),hh=$('.Header').outerHeight(true)
+        $('.Content-box').css({'min-height': wh-fh-hh})
+    })()
+
+
+</script>
+</body>
+</html>
+
+<class 'lxml.etree._Element'>
