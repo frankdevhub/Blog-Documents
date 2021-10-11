@@ -6,10 +6,8 @@
 @Blog : http://blog.frankdevhub.site
 @Date ：2021/2/16 20:49
 """
-
 import inspect
 from enum import Enum, unique
-
 
 @unique
 class CharacterEncode(Enum):
