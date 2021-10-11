@@ -14,8 +14,7 @@ from .character import CharacterHelper
 
 
 class NumericUnit(Enum):
-    """ 通用计量单位枚举类"""
-
+    # 通用计量单位枚举类
     def __new__(cls, unit: chr):
         instance = object.__new__(cls)
         instance.unit = unit
@@ -43,3 +42,10 @@ class NumericUnit(Enum):
     Ten_Thousand_CN = '万'  # 万位数 中文简体
     Ten_Thousand_TW = '萬'  # 万位数 繁体中文
     Ten_Thousand_EN = 'W'  # 万位数 英文字符
+
+
+if __name__ == '__main__':
+    for enum_instance in NumericUnit.__members__:
+        print(f'{enum_instance}')
+        for (type_name, obj) in inspect.getmembers(enum_instance):
+            print(f'type_name: {type_name}, obj: {obj}')
