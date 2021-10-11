@@ -18,8 +18,9 @@ test_headers = {
     'Connection': 'close',
     'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'
 }
-test_51cto_blog_example = "https://blog.51cto.com/oldboy"  # https://blog.51cto.com/oldboy
-test_51cto_docs_list_xpath = "//div[@class='common-article-list']"  # //div[@class="common-article-list"]
+test_51cto_blog_example = "https://blog.51cto.com/oldboy"  # https://blog.51cto.com/oldboy 博客个人空间页面
+test_51cto_docs_list_xpath = "//div[@class='common-article-list']"  # //div[@class="common-article-list"] 博客个人空间页面下当前页下的文档对象集合
+test_51cto_pagination_tags_xpath = "//ul[@class='pagination']/li/a"  # //ul[@class='pagination']/li/a 博客个人空间当前页页脚分页控件对象
 
 
 class TestBeautifulSoup(unittest.TestCase):
@@ -87,13 +88,17 @@ class TestBeautifulSoup(unittest.TestCase):
         return
 
     @staticmethod
-    def test_51cto_get_page_tags():
-        # 测试依据Xpath表达式捕获页面dom对象中的标签元素对象
-        log.debug('invoke method -> test_51cto_get_page_tags()')
+    def test_51cto_get_pagination_tags():
+        # 测试依据Xpath表达式捕获页脚分页标签对象
+        log.debug('invoke method -> test_51cto_get_pagination_tags()')
         page_tree = TestBeautifulSoup.test_51cto_blog_etree()
         assert page_tree is not None, 'page_tree cannot be none'
 
-        pass
+        # 获取分页控件对象集合
+        pagination_tags = page_tree.xpath(test_51cto_pagination_tags_xpath)
+        assert pagination_tags is not None, 'pagination_tags cannot be none'
+        print(f'pagination_tags size = {len(pagination_tags)}')
+        # 遍历分页标签对象集合,获取每一个分页标签对象的超链接地址
 
 
 if __name__ == '__main__':
