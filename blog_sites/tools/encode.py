@@ -28,7 +28,7 @@ class CharacterEncode(Enum):
 
 
 if __name__ == '__main__':
-    for instance in CharacterEncode.__members__:
-        print(f'{instance}')
-        for (type_name, obj) in inspect.getmembers(instance):
+    for enum_instance in CharacterEncode.__members__:
+        print(f'{enum_instance}')
+        for (type_name, obj) in inspect.getmembers(enum_instance):
             print(f'type_name: {type_name}, obj: {obj}')
