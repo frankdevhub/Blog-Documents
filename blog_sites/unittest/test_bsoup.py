@@ -98,13 +98,23 @@ class TestBeautifulSoup(unittest.TestCase):
         pagination_tags = page_tree.xpath(test_51cto_pagination_tags_xpath)
         assert pagination_tags is not None, 'pagination_tags cannot be none'
         print(f'pagination_tags size = {len(pagination_tags)}')
+
         # 遍历分页标签对象集合,获取每一个分页标签对象的超链接地址
+        for tag in pagination_tags:
+            print(tag)
+            # get_text()
+            print(f'tag.get_text() = {tag.get_text()}')
+            # data-page
+            print(f'attribute data-page = {tag.get("data-page")}')
+            # href
+            print(f'attribute href = {tag.get("href")}')
 
 
 if __name__ == '__main__':
     test_suite = unittest.TestSuite()
-    test_suite.addTest(TestBeautifulSoup('test_local'))  # test_local
-    test_suite.addTest(TestBeautifulSoup('test_51cto_blog_etree'))  # test_51cto_blog_etree
-    test_suite.addTest(TestBeautifulSoup('test_51cto_get_page_docs'))  # test_51cto_get_page_docs
+    # test_suite.addTest(TestBeautifulSoup('test_local'))  # test_local
+    # test_suite.addTest(TestBeautifulSoup('test_51cto_blog_etree'))  # test_51cto_blog_etree
+    # test_suite.addTest(TestBeautifulSoup('test_51cto_get_page_docs'))  # test_51cto_get_page_docs
+    test_suite.addTest(TestBeautifulSoup('test_51cto_get_pagination_tags'))  # test_51cto_get_pagination_tags
     runner = unittest.TextTestRunner()
     runner.run(test_suite)
