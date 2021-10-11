@@ -9,10 +9,10 @@
 
 from enum import Enum, unique
 
+
 @unique
 class DefaultDistrict(Enum):
-    """默认是上海地区的枚举类"""
-
+    # 默认是上海地区的枚举类
     def __new__(cls, args):
         instance = object.__new__(cls)
         instance.en_name = args['en_name']  # 辖区英语简称
@@ -40,3 +40,10 @@ class DefaultDistrict(Enum):
     JD = {'en_name': 'JD', 'cn_name': '嘉定', 'district_code': 310114}  # 上海市-嘉定区
     PD = {'en_name': 'PD', 'cn_name': '浦东', 'district_code': 310115}  # 上海市-浦东新区
     JS = {'en_name': 'JS', 'cn_name': '金山', 'district_code': 310116}  # 上海市-金山区
+
+
+if __name__ == '__main__':
+    for enum_instance in DefaultDistrict.__members__:
+        print(f'{enum_instance}')
+        for (type_name, obj) in inspect.getmembers(enum_instance):
+            print(f'type_name: {type_name}, obj: {obj}')
