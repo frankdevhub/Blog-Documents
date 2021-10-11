@@ -57,7 +57,7 @@ class TestBeautifulSoup(unittest.TestCase):
         log.debug('invoke method -> test_51cto_blog_example()')
         response = requests.get(url=test_51cto_blog_example, headers=test_headers)
         page_context = response.text
-        print(page_context)
+        # print(page_context)
 
         tree = etree.HTML(page_context)
         assert tree is not None, 'xml tree cannot be none'
@@ -102,8 +102,13 @@ class TestBeautifulSoup(unittest.TestCase):
         # 遍历分页标签对象集合,获取每一个分页标签对象的超链接地址
         for tag in pagination_tags:
             print(tag)
+            print(type(tag))
             # get_text()
-            print(f'tag.get_text() = {tag.get_text()}')
+            # print(f'tag.get_text() = {tag.get_text()}')
+            # outerText
+            print(f'attribute outerText = {tag.get("outerText")}')
+            # outerHTML
+            print(f'attribute outerHTML = {tag.get("outerHTML")}')
             # data-page
             print(f'attribute data-page = {tag.get("data-page")}')
             # href
