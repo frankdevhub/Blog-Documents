@@ -8,6 +8,7 @@
 """
 import logging as log
 import unittest
+
 import requests
 from bs4 import BeautifulSoup
 from lxml import etree
@@ -19,6 +20,7 @@ test_headers = {
 }
 test_51cto_blog_example = "https://blog.51cto.com/oldboy"  # https://blog.51cto.com/oldboy
 test_51cto_docs_list_xpath = "//div[@class='common-article-list']"  # //div[@class="common-article-list"]
+
 
 class TestBeautifulSoup(unittest.TestCase):
 
@@ -70,7 +72,7 @@ class TestBeautifulSoup(unittest.TestCase):
         @return: 页面对象中的博文列表对象
         @rtype: list
         """
-        print('invoke method -> test_51cto_get_page_docs()')
+        log.debug('invoke method -> test_51cto_get_page_docs()')
         docs_xpath = test_51cto_docs_list_xpath
         print(f'using xpath = {str(docs_xpath)}')
         # docs_tree = test_51cto_blog_example()
@@ -84,10 +86,20 @@ class TestBeautifulSoup(unittest.TestCase):
         print(f'page_docs size = {len(page_docs)}')
         return
 
+    @staticmethod
+    def test_51cto_get_page_tags():
+        # 测试依据Xpath表达式捕获页面dom对象中的标签元素对象
+        log.debug('invoke method -> test_51cto_get_page_tags()')
+        page_tree = TestBeautifulSoup.test_51cto_blog_etree()
+        assert page_tree is not None, 'page_tree cannot be none'
+
+        pass
+
+
 if __name__ == '__main__':
     test_suite = unittest.TestSuite()
-    # test_suite.addTest(TestBeautifulSoup('test_local'))  # test_local
-    # test_suite.addTest(TestBeautifulSoup('test_51cto_blog_etree'))  # test_51cto_blog_etree
+    test_suite.addTest(TestBeautifulSoup('test_local'))  # test_local
+    test_suite.addTest(TestBeautifulSoup('test_51cto_blog_etree'))  # test_51cto_blog_etree
     test_suite.addTest(TestBeautifulSoup('test_51cto_get_page_docs'))  # test_51cto_get_page_docs
     runner = unittest.TextTestRunner()
     runner.run(test_suite)
