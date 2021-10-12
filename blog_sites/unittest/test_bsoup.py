@@ -60,7 +60,7 @@ class TestBeautifulSoup(unittest.TestCase):
 
     @staticmethod
     def test_51cto_get_page_docs():
-        # 测试抓取博客网页对象中的博文列表对象
+        # 测试抓取博客网页对象中的博文简介列表对象
         log.debug('invoke method -> test_51cto_get_page_docs()')
         docs_xpath = test_51cto_docs_list_xpath
         print(f'using xpath = {str(docs_xpath)}')
