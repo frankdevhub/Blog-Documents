@@ -14,6 +14,7 @@ from ..tools.numeric import NumericUnit
 
 log.basicConfig(level=log.DEBUG)
 
+
 class TestNumericUnit(unittest.TestCase):
 
     def test_numeric_unit_members(self):
@@ -23,5 +24,9 @@ class TestNumericUnit(unittest.TestCase):
             for (type_name, obj) in inspect.getmembers(instance):
                 print(f'type_name: {type_name}, obj: {obj}')
 
+
 if __name__ == '__main__':
-    unittest.main()
+    test_suite = unittest.TestSuite()
+    test_suite.addTest(TestNumericUnit('test_numeric_unit_members'))
+    runner = unittest.TextTestRunner()
+    runner.run(test_suite)
