@@ -27,7 +27,7 @@ class TestBeautifulSoup(unittest.TestCase):
 
     @staticmethod
     def test_local():
-        """测试本地运行环境"""
+        # 测试本地运行环境
         log.debug('invoke method -> test_local()')
         html = """
           <html><head><title>The Dormouse's story</title></head>
@@ -47,14 +47,8 @@ class TestBeautifulSoup(unittest.TestCase):
 
     @staticmethod
     def test_51cto_blog_etree() -> etree:
-        """
-        测试抓取博客网页文本html原始内容
-        eg:
-        input: https://blog.51cto.com/oldboy
-        @return: 页面对象Html源文档对象内容
-        @rtype: tree
-        """
-        log.debug('invoke method -> test_51cto_blog_example()')
+        # 测试抓取博客网页文本html原始内容
+        log.debug('invoke method -> test_51cto_blog_etree()')
         response = requests.get(url=test_51cto_blog_example, headers=test_headers)
         page_context = response.text
         # print(page_context)
@@ -66,13 +60,7 @@ class TestBeautifulSoup(unittest.TestCase):
 
     @staticmethod
     def test_51cto_get_page_docs():
-        """
-        测试抓取博客网页对象中的博文列表对象
-        eg:
-        input: https://blog.51cto.com/oldboy
-        @return: 页面对象中的博文列表对象
-        @rtype: list
-        """
+        # 测试抓取博客网页对象中的博文列表对象
         log.debug('invoke method -> test_51cto_get_page_docs()')
         docs_xpath = test_51cto_docs_list_xpath
         print(f'using xpath = {str(docs_xpath)}')
