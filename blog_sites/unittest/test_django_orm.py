@@ -19,6 +19,7 @@ django.setup()
 
 log.basicConfig(level=log.DEBUG)
 
+
 class DjangoORMTest(unittest.TestCase):
 
     @staticmethod
@@ -27,8 +28,9 @@ class DjangoORMTest(unittest.TestCase):
         obj = BlogDocumentBrief('', 'blog_domain', 'doc_title')
         obj.save()
 
+
 if __name__ == '__main__':
-    testunit = unittest.TestSuite()
-    testunit.addTest(DjangoORMTest("test_insert"))  # test_insert
+    test_suite = unittest.TestSuite()
+    test_suite.addTest(DjangoORMTest("test_insert"))  # test_insert
     runner = unittest.TextTestRunner()
-    runner.run(testunit)
+    runner.run(test_suite)
