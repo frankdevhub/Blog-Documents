@@ -22,17 +22,11 @@ test_blog_doc_links = ["https://blog.51cto.com/oldboy/1926142",  # docId= 192614
                        "https://blog.51cto.com/oldboy/1855461",  # docId= 1855461
                        "https://blog.51cto.com/oldboy/1911034"]  # docId= 1911034
 
-
 class TestRegexExpression(unittest.TestCase):
 
     @staticmethod
     def test_match_blog_union_id():
-        """
-        测试正则表达式匹配博客文章链接的唯一标识
-        eg:
-           input = "https://blog.51cto.com/oldboy/1189530"
-           output = 1189530(文档唯一识别号)
-        """
+        # 测试正则表达式匹配博客文章链接的唯一标识
         log.debug('invoke method -> test_match_blog_union_id()')
         test_example = test_blog_doc_link
         print(f'test_blog_doc_link: {test_example}')
@@ -46,7 +40,7 @@ class TestRegexExpression(unittest.TestCase):
 
     @staticmethod
     def test_match_blog_union_ids():
-        """测试逐个匹配51cto博客测试链接集合,匹配博文的唯一标识"""
+        # 测试逐个匹配51cto博客测试链接集合,匹配博文的唯一标识
         log.debug('invoke method -> test_match_blog_union_ids()')
         for link in test_blog_doc_links:
             print(link)
@@ -55,7 +49,7 @@ class TestRegexExpression(unittest.TestCase):
 
 if __name__ == "__main__":
     testunit = unittest.TestSuite()
-    testunit.addTest(TestRegexExpression("test_match_blog_union_id"))  # test_match_blog_union_id
-    testunit.addTest(TestRegexExpression("test_match_blog_union_ids"))  # test_match_blog_union_ids
+    testunit.addTest(TestRegexExpression('test_match_blog_union_id'))  # test_match_blog_union_id
+    testunit.addTest(TestRegexExpression('test_match_blog_union_ids'))  # test_match_blog_union_ids
     runner = unittest.TextTestRunner()
     runner.run(testunit)
