@@ -102,7 +102,7 @@ class TestExamples(unittest.TestCase):
         log.debug('invoke method -> test_get_document_properties()')
 
         # 获取测试博客文档的页面DOM对象
-        page_tree = doc_tree_example()
+        page_tree = TestExamples.doc_tree_example()
         assert page_tree is not None, 'xml tree cannot be none'
 
         # 测试: 获取文档对象大标题 eg: LDAP跨多机房统一认证及授权管理精品解决方案
