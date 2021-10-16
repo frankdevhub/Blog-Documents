@@ -17,10 +17,14 @@ test_headers = {
     'Connection': 'close',
     'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36'
 }
+# test_blogs
 test_blog_example = "https://blog.51cto.com/oldboy"  # https://blog.51cto.com/oldboy 博客个人空间页面(测试样例)
+# test_docs
 test_doc_link = "https://blog.51cto.com/oldboy/1189530"  # https://blog.51cto.com/oldboy/1189530  博客文档内容页面(测试样例)
 test_docs_list_xpath = "//div[@class='common-article-list']"  # //div[@class="common-article-list"] 博客个人空间页面下当前页下的文档对象集合
 test_pagination_tags_xpath = "//ul[@class='pagination']/li/a"  # //ul[@class='pagination']/li/a 博客个人空间当前页页脚分页控件对象
+# test_documents
+test_doc_title_xpath = "//div[@class='title']/h1"  # //div[@class='title']/h1 博客文档对象的标题
 
 
 # 测试获取博客文档以及相关属性
@@ -91,22 +95,35 @@ class TestExamples(unittest.TestCase):
         # print(type(tree))
         return tree
 
-    # https://blog.51cto.com/oldboy/1189530
     @staticmethod
     def test_get_document_properties():
         # 测试获取文档对象的各个属性
+        # 测试链接: https://blog.51cto.com/oldboy/1189530
         log.debug('invoke method -> test_get_document_properties()')
+
+        # 获取测试博客文档的页面DOM对象
         page_tree = doc_tree_example()
+        assert page_tree is not None, 'xml tree cannot be none'
+
         # 测试: 获取文档对象大标题 eg: LDAP跨多机房统一认证及授权管理精品解决方案
+        title = page_tree.xpath(test_doc_title_xpath)
+        assert title is not None, 'title cannot be none'
+        title_text = title.get_text()
+        print(f'doc_title = {title_text}')
+
         # 测试: 获取文档摘要内容
+
         # 测试: 获取文档正文内容
+
         # 测试: 获取完整文档的页面HTML页面
+
         # 测试: 获取文档的创建时间,文档的分类标签,分类类别名称
         pass
 
 if __name__ == '__main__':
     test_suite = unittest.TestSuite()
-    test_suite.addTest(TestExamples('test_get_dom_tree'))  # test_get_dom_tree
-    test_suite.addTest(TestExamples('test_get_page_doc_list'))  # test_get_page_doc_list
-    test_suite.addTest(TestExamples('test_get_pagination_tags'))  # test_51cto_get_pagination_tags
+    # test_suite.addTest(TestExamples('test_get_dom_tree'))  # test_get_dom_tree
+    # test_suite.addTest(TestExamples('test_get_page_doc_list'))  # test_get_page_doc_list
+    # test_suite.addTest(TestExamples('test_get_pagination_tags'))  # test_51cto_get_pagination_tags
+    test_suite.addTest(TestExamples('test_get_document_properties'))  # test_get_document_properties
     runner = unittest.TextTestRunner()
