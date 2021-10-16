@@ -30,6 +30,7 @@ test_doc_title_xpath = "//div[@class='title']/h1"  # //div[@class='title']/h1 �
 # 测试获取博客文档以及相关属性
 class TestExamples(unittest.TestCase):
 
+    @unittest.skip
     @staticmethod
     def test_get_dom_tree() -> etree:
         log.debug('invoke method -> test_get_dom_tree()')
@@ -40,6 +41,7 @@ class TestExamples(unittest.TestCase):
         print(type(tree))
         return tree
 
+    @unittest.skip
     @staticmethod
     def test_get_page_doc_list():
         # 测试抓取博客网页对象中的博文简介列表对象
@@ -56,6 +58,7 @@ class TestExamples(unittest.TestCase):
         print(f'page_docs size = {len(page_docs)}')
         return
 
+    @unittest.skip
     @staticmethod
     def test_get_pagination_tags():
         # 测试依据Xpath表达式捕获页脚分页标签对象
@@ -108,7 +111,8 @@ class TestExamples(unittest.TestCase):
         # 测试: 获取文档对象大标题 eg: LDAP跨多机房统一认证及授权管理精品解决方案
         title = page_tree.xpath(test_doc_title_xpath)
         assert title is not None, 'title cannot be none'
-        title_text = title.get_text()
+        # print(f'title size = {len(title)}')
+        title_text = title[0].text
         print(f'doc_title = {title_text}')
 
         # 测试: 获取文档摘要内容
