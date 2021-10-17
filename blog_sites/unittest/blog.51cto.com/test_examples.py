@@ -25,13 +25,15 @@ test_docs_list_xpath = "//div[@class='common-article-list']"  # //div[@class="co
 test_pagination_tags_xpath = "//ul[@class='pagination']/li/a"  # //ul[@class='pagination']/li/a 博客个人空间当前页页脚分页控件对象
 # test_documents
 test_doc_title_xpath = "//div[@class='title']/h1"  # //div[@class='title']/h1 博客文档对象的标题
+test_doc_summary_xpath = "//div[@class='con editor-preview-side']/p/strong/span/span"  # //div[@class='con editor-preview-side']/p/strong/span/span 博客文档对象摘要
+test_doc_context_xpath = "//div[@class='con editor-preview-side']/p/*[name(.)!='strong']"  # //div[@class='con editor-preview-side']/p/*[name(.)!='strong'] 博客文档对象的正文内容
 
 
 # 测试获取博客文档以及相关属性
 class TestExamples(unittest.TestCase):
 
-    @unittest.skip
     @staticmethod
+    @unittest.skip
     def test_get_dom_tree() -> etree:
         log.debug('invoke method -> test_get_dom_tree()')
         response = requests.get(url=test_blog_example, headers=test_headers)
@@ -41,8 +43,8 @@ class TestExamples(unittest.TestCase):
         print(type(tree))
         return tree
 
-    @unittest.skip
     @staticmethod
+    @unittest.skip
     def test_get_page_doc_list():
         # 测试抓取博客网页对象中的博文简介列表对象
         log.debug('invoke method -> test_get_page_doc_list()')
@@ -51,15 +53,15 @@ class TestExamples(unittest.TestCase):
         response = requests.get(url=test_blog_example, headers=test_headers)
         page_context = response.text
         docs_tree = etree.HTML(page_context)
-
+        # 文档页面DOM树对象
         assert docs_tree is not None, 'xml tree cannot be none'
         page_docs = docs_tree.xpath(docs_xpath)
         assert page_docs is not None, 'page_docs cannot be none'
         print(f'page_docs size = {len(page_docs)}')
         return
 
-    @unittest.skip
     @staticmethod
+    @unittest.skip
     def test_get_pagination_tags():
         # 测试依据Xpath表达式捕获页脚分页标签对象
         log.debug('invoke method -> test_get_pagination_tags()')
@@ -103,26 +105,55 @@ class TestExamples(unittest.TestCase):
         # 测试获取文档对象的各个属性
         # 测试链接: https://blog.51cto.com/oldboy/1189530
         log.debug('invoke method -> test_get_document_properties()')
-
         # 获取测试博客文档的页面DOM对象
         page_tree = TestExamples.doc_tree_example()
         assert page_tree is not None, 'xml tree cannot be none'
+        # 测试获取博客文档页面对象的各个属性与文档内容
 
-        # 测试: 获取文档对象大标题 eg: LDAP跨多机房统一认证及授权管理精品解决方案
+        # 【测试-1】: 获取文档对象大标题 eg: LDAP跨多机房统一认证及授权管理精品解决方案
         title = page_tree.xpath(test_doc_title_xpath)
         assert title is not None, 'title cannot be none'
-        # print(f'title size = {len(title)}')
-        title_text = title[0].text
-        print(f'doc_title = {title_text}')
+        doc_title = title[0].text
+        print(f'doc_title = {doc_title}')
 
-        # 测试: 获取文档摘要内容
+        # 【测试-2】: 获取文档摘要内容
+        summary = page_tree.xpath(test_doc_summary_xpath)
+        assert summary is not None, 'summary cannot be none'
+        summary = summary[0]
+        doc_summary = ''
+        for i in summary.itertext():
+            # print(i)
+            doc_summary.join(i)
+        print(f'doc_summary =  {doc_summary}')
+        # 【测试-3】: 获取文档正文内容
+        context = page_tree.xpath(test_doc_context_xpath)
+        assert context is not None, 'context cannot be none'
+        context = context[0]
+        doc_context = context[0]
+        for i in context.itertext():
+            doc_context.join(i)
+        print('\n\n')
+        print(f'doc_context = ')
+        print(doc_context)
+        # 【测试-4】: 获取完整文档的页面HTML页面
 
-        # 测试: 获取文档正文内容
-
-        # 测试: 获取完整文档的页面HTML页面
-
-        # 测试: 获取文档的创建时间,文档的分类标签,分类类别名称
+        # 【测试-5】: 获取文档的创建时间,文档的分类标签,分类类别名称
         pass
+
+    @staticmethod
+    @unittest.skip
+    def loop_page_example():
+        # 测试遍历当前页面对象,获取当前页面对象,遍历博客文档简介列表中文档的链接
+        log.debug('invoke method ->loop_page_example()')
+        pass
+
+    @staticmethod
+    @unittest.skip
+    def test_loop_in_pages():
+        # 测试遍历博客空间下的每一个分页对象
+        log.debug('invoke method -> test_loop_in_pages()')
+        pass
+
 
 if __name__ == '__main__':
     test_suite = unittest.TestSuite()
