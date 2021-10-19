@@ -24,6 +24,7 @@ class DjangoORMTest(unittest.TestCase):
 
     @staticmethod
     def test_insert():
+        # 测试新增博客文档对象
         log.debug('invoke method -> test_insert()')
         obj = BlogDocumentBrief('', 'blog_domain', 'doc_title')
         obj.save()
@@ -31,6 +32,6 @@ class DjangoORMTest(unittest.TestCase):
 
 if __name__ == '__main__':
     test_suite = unittest.TestSuite()
-    test_suite.addTest(DjangoORMTest("test_insert"))  # test_insert
+    test_suite.addTest(DjangoORMTest('test_insert'))  # test_insert 测试新增对象
     runner = unittest.TextTestRunner()
     runner.run(test_suite)
