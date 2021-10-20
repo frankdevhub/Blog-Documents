@@ -26,8 +26,7 @@ test_pagination_tags_xpath = "//ul[@class='pagination']/li/a"  # //ul[@class='pa
 # test_documents
 test_doc_title_xpath = "//div[@class='title']/h1"  # //div[@class='title']/h1 博客文档对象的标题
 test_doc_summary_xpath = "//div[@class='con editor-preview-side']/p/strong/span/span"  # //div[@class='con editor-preview-side']/p/strong/span/span 博客文档对象摘要
-test_doc_context_xpath = "//div[@class='con editor-preview-side']/p/*[name(.)!='strong']"  # //div[@class='con editor-preview-side']/p/*[name(.)!='strong'] 博客文档对象的正文内容
-
+test_doc_context_xpath = "//div[@class='con editor-preview-side']/p"  # //div[@class='con editor-preview-side']/p 博客文档对象的正文内容
 
 # 测试获取博客文档以及相关属性
 class TestExamples(unittest.TestCase):
@@ -111,27 +110,28 @@ class TestExamples(unittest.TestCase):
         # 测试获取博客文档页面对象的各个属性与文档内容
 
         # 【测试-1】: 获取文档对象大标题 eg: LDAP跨多机房统一认证及授权管理精品解决方案
-        title = page_tree.xpath(test_doc_title_xpath)
-        assert title is not None, 'title cannot be none'
-        doc_title = title[0].text
-        print(f'doc_title = {doc_title}')
+        # title = page_tree.xpath(test_doc_title_xpath)
+        # assert title is not None, 'title cannot be none'
+        # doc_title = title[0].text
+        # print(f'doc_title = {doc_title}')
 
         # 【测试-2】: 获取文档摘要内容
-        summary = page_tree.xpath(test_doc_summary_xpath)
-        assert summary is not None, 'summary cannot be none'
-        summary = summary[0]
-        doc_summary = ''
-        for i in summary.itertext():
-            # print(i)
-            doc_summary.join(i)
-        print(f'doc_summary =  {doc_summary}')
+        # summary = page_tree.xpath(test_doc_summary_xpath)
+        # assert summary is not None, 'summary cannot be none'
+        # summary = summary[0]
+        # doc_summary = ''
+        # for i in summary.itertext():
+        #     # print(i)
+        #     doc_summary = doc_summary.join(i)
+        # print(f'doc_summary =  {doc_summary}')
         # 【测试-3】: 获取文档正文内容
         context = page_tree.xpath(test_doc_context_xpath)
         assert context is not None, 'context cannot be none'
+        print(len(context))
         context = context[0]
-        doc_context = context[0]
+        doc_context = ''
         for i in context.itertext():
-            doc_context.join(i)
+            doc_context = doc_context.join(i)
         print('\n\n')
         print(f'doc_context = ')
         print(doc_context)
