@@ -8,23 +8,19 @@
 """
 
 class Xpath:
-    """
-      selenium dicts
-      web element attribute name
-      页面对象常用属性参数
-    """
+    # 页面对象常用属性参数
     def __init__(self):
         pass
 
-    ATTRIBUTE_NAME = "name"
-    ATTRIBUTE_TITLE = "title"
-    ATTRIBUTE_TARGET = "target"
-    ATTRIBUTE_HREF = "href"
-    ATTRIBUTE_CLASS = "class"
-    ATTRIBUTE_VALUE = "value"
+    ATTRIBUTE_NAME = "name"  # name
+    ATTRIBUTE_TITLE = "title"  # title
+    ATTRIBUTE_TARGET = "target"  # target
+    ATTRIBUTE_HREF = "href"  # href
+    ATTRIBUTE_CLASS = "class"  # class
+    ATTRIBUTE_VALUE = "value"  # value
 
 class WebLinks:
-    """网络资源相关链接地址"""
+    # 网络资源相关链接地址
     def __init__(self):
         pass
 
@@ -32,8 +28,7 @@ class WebLinks:
     BLOG_EXAMPLE_1 = "https://blog.51cto.com/oldboy"  # 51CTO博客站点实例(https://blog.51cto.com/oldboy)
 
 class BusinessConstants:
-    """业务常用字段"""
-
+    # 业务常用字段
     # 接口规范常用字段
     def __init__(self):
         pass
