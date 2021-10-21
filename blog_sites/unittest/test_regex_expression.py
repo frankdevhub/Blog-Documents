@@ -39,6 +39,7 @@ class TestRegexExpression(unittest.TestCase):
             print('result: not matched')
 
     @staticmethod
+    @unittest.skip
     def test_match_blog_union_ids():
         # 测试逐个匹配51cto博客测试链接集合,匹配博文的唯一标识
         log.debug('invoke method -> test_match_blog_union_ids()')
@@ -46,10 +47,9 @@ class TestRegexExpression(unittest.TestCase):
             print(link)
         pass
 
-
 if __name__ == "__main__":
     testunit = unittest.TestSuite()
     testunit.addTest(TestRegexExpression('test_match_blog_union_id'))  # test_match_blog_union_id
-    testunit.addTest(TestRegexExpression('test_match_blog_union_ids'))  # test_match_blog_union_ids
+    # testunit.addTest(TestRegexExpression('test_match_blog_union_ids'))  # test_match_blog_union_ids
     runner = unittest.TextTestRunner()
     runner.run(testunit)
