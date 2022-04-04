@@ -44,8 +44,3 @@ class BusinessConstants:
     CHARACTER_NULL_ARGUMENT = "character should not be null"  # 字符不能为空
     INVALID_CHINESE_CHARACTER = "not a chinese character"  # 非中文的字符异常
     INVALID_ENGLISH_CHARACTER = "not an english character"  # 非英文的字符的异常
-
-#
-# if __name__ == '__main__':
-#     url_link = BusinessConstants.BLOG_EXAMPLE_1
-#     print(url_link)
