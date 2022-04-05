@@ -6,8 +6,8 @@
 @Blog : http://blog.frankdevhub.site
 @Date ：2022/4/4 22:09
 """
-
 import logging as log
+import os
 
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
@@ -84,12 +84,18 @@ class Blog51CTO:
             doc_link = href.get_attribute('href')
             print(f'doc_link = {doc_link}')
 
-            assert doc_link is not None, 'doc_link cannot be none'
+            assert doc_link is not None, 'variable doc_link cannot be none'
             link_dict.append(doc_link)
 
-    def download_doc(self):
+    def download_doc(self, ctx, title):
         log.debug('invoke method -> download_docs()')
-        pass
+
+        assert ctx is not None, 'variable ctx cannot be none'
+        assert title is not None, 'variable title cannot be none'
+        print(f'document title = {title}')
+
+        access = os.access(download_path, os.F_OK)
+        print("path %x access = %d" % (download_path, access))
 
 
 if __name__ == '__main__':
