@@ -39,7 +39,7 @@ blog_home_title = '51cto'
 log.basicConfig(level=log.INFO)
 
 
-class Blog_51CTO:
+class Blog51CTO:
 
     def __init__(self):
         self._driver = driver_path
@@ -58,6 +58,9 @@ class Blog_51CTO:
         self._wait = WebDriverWait(self._web_driver, 10)
         self.scratch_docs(self, blog_home_title)
 
+        # 获取页面分页控件对象
+        # 跳转到下一页列表
+
     def scratch_docs(self, link):
         log.debug('invoke method -> scratch_docs()')
         print(f'link = {link}')
@@ -71,14 +74,24 @@ class Blog_51CTO:
         timeout.sleep(1)
         # 博客列表页 //div[@class='common-article-list']
         doc_list = driver.find_elements(By.XPATH, "//div[@class='common-article-list']")
-        for doc in doc_list:
-            pass
+        link_dict = []
+        # 获取当前浏览器对象的网址链接
+        driver_link = self._web_driver.current_url
+        print(f'driver_link = {driver_link}')
 
-    def download_docs(self):
+        for article in doc_list:
+            href = data.find_element(By.XPATH, "//h3[@class='title']/a")
+            doc_link = href.get_attribute('href')
+            print(f'doc_link = {doc_link}')
+
+            assert doc_link is not None, 'doc_link cannot be none'
+            link_dict.append(doc_link)
+
+    def download_doc(self):
         log.debug('invoke method -> download_docs()')
         pass
 
 
 if __name__ == '__main__':
-    scanner = Blog_51CTO()
+    scanner = Blog51CTO()
     scanner.scratch_pages()
