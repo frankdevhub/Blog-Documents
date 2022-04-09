@@ -37,6 +37,7 @@ js_bottom2 = 'window.scrollTo(0,document.body.scrollHeight)'
 js_bottom3 = 'window.scrollTo(0,4890)'
 # 关键字
 blog_home_title = 'oldboy'
+blog_page_title = '51CTO'
 
 log.basicConfig(level=log.INFO)
 
@@ -91,34 +92,65 @@ class Blog51CTO:
         # 滚动到页面最底部等待列表页面dom树加载完成
         self._web_driver.execute_script(js_bottom2)
         time.sleep(1)
+
         list_xpath = "//div[@class='common-article-list']"
         self._wait.until(EC.presence_of_element_located((By.XPATH, list_xpath)))
         doc_list = self._web_driver.find_elements(By.XPATH, list_xpath)
+
         assert doc_list is not None, 'variable doc_list cannot be none'
         print("doc_list size = %d" % len(doc_list))
 
         # 页面列表对象内的文档对象的链接集合
-        link_dict = []
+        docs = []
         driver_link = self._web_driver.current_url
         print(f'driver_link = {driver_link}')
 
+        entry = driver_link
+
         for i in range(1, len(doc_list)):
             article = doc_list[i - 1]
+
             href = article.find_element(By.XPATH, "div[1]/h3[@class='title']/a")
+            doc_title = href.text
+            print(f'doc_title = {doc_title}')
             doc_link = href.get_attribute('href')
             print(f'doc_link = {doc_link}')
 
+            assert doc_title is not None, 'variable doc_title cannot be none'
             assert doc_link is not None, 'variable doc_link cannot be none'
-            link_dict.append(doc_link)
+            doc = {'title': doc_title, 'link': doc_link}
+
+        docs.append(doc)
+
+        for j in range(1, len(docs)):
+            doc = docs[j - 1]
+            try:
+                self.download_doc(doc['title'], doc['link'])
+            except Exception as e:
+                print(e)
+            finally:
+                # 退回到上一级入口,遍历下一个文档对象
+                self._web_driver.get(entry)
 
         print(link_dict)
 
-    def download_doc(self, ctx, title):
+    def download_doc(self, title, link, entry):
         log.debug('invoke method -> download_docs()')
 
         assert ctx is not None, 'variable ctx cannot be none'
         assert title is not None, 'variable title cannot be none'
+        assert entry is not None, 'variable entry cannot be none'
         print(f'document title = {title}')
+
+        self._web_driver.get(link)
+        time.sleep(1)
+        self._wait.until(EC.title_contains(blog_page_title))
+        # 定位文档文本对象位置
+        article_xpath = "//section[@class='detail-content-left']/article[1]"
+        article = self._web_driver.find_element(By.XPATH, article_xpath)
+        context = article.text
+        print(context)
+
         # 校验文档目录存储读取权限
         access = os.access(download_path, os.F_OK)
         print("path %x access = %d" % (download_path, access))
