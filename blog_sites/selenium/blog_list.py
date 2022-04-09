@@ -32,12 +32,10 @@ js_top = 'var q=document.documentElement.scrollTop=0'
 js_bottom1 = 'var q=document.documentElement.scrollTop=10000'
 js_bottom2 = 'window.scrollTo(0,document.body.scrollHeight)'
 js_bottom3 = 'window.scrollTo(0,4890)'
-
 # 关键字
 blog_home_title = '51cto'
 
 log.basicConfig(level=log.INFO)
-
 
 class Blog51CTO:
 
@@ -56,10 +54,22 @@ class Blog51CTO:
         self._web_driver.implicitly_wait(10)
         self._web_driver.maximize_window()
         self._wait = WebDriverWait(self._web_driver, 10)
-        self.scratch_docs(self, blog_home_title)
 
-        # 获取页面分页控件对象
-        # 跳转到下一页列表
+        _link = blog_home
+        while _link is not None:
+            self.scratch_docs(self, _link)
+            # 获取页面分页控件对象
+            next_page = "//ul[@class='pagination']/li[@class='next']/a"
+            exist = self._wait.until(EC.visibility_of(self._web_driver.find_element(By.XPATH, next_page)))
+            if exist is True:
+                next_btn = self._web_driver.find_element(next_page)
+                next_href = next_btn.find_element('href')
+                assert next_href is not None, 'variable next_href cannot be none'
+                print(f'next_href = {next_href}')
+                _link = nxt_href
+
+            else:
+                next_btn
 
     def scratch_docs(self, link):
         log.debug('invoke method -> scratch_docs()')
@@ -67,25 +77,27 @@ class Blog51CTO:
 
         self._web_driver.get(link)
         self._wait.until(EC.title_contains(blog_home_title))
-        # 滚动到页面底部
         time.sleep(1)
         # 滚动到页面最底部等待列表页面dom树加载完成
         self._web_driver.execute_script(js_bottom2)
         timeout.sleep(1)
-        # 博客列表页 //div[@class='common-article-list']
+        # 博客列表页Xpath: //div[@class='common-article-list']
         doc_list = driver.find_elements(By.XPATH, "//div[@class='common-article-list']")
+
+        # 页面列表对象内的文档对象的链接集合
         link_dict = []
-        # 获取当前浏览器对象的网址链接
         driver_link = self._web_driver.current_url
         print(f'driver_link = {driver_link}')
 
         for article in doc_list:
-            href = data.find_element(By.XPATH, "//h3[@class='title']/a")
+            href = article.find_element(By.XPATH, "//h3[@class='title']/a")
             doc_link = href.get_attribute('href')
             print(f'doc_link = {doc_link}')
 
             assert doc_link is not None, 'variable doc_link cannot be none'
             link_dict.append(doc_link)
+
+        print(link_dict)
 
     def download_doc(self, ctx, title):
         log.debug('invoke method -> download_docs()')
@@ -93,7 +105,7 @@ class Blog51CTO:
         assert ctx is not None, 'variable ctx cannot be none'
         assert title is not None, 'variable title cannot be none'
         print(f'document title = {title}')
-
+        # 校验文档目录存储读取权限
         access = os.access(download_path, os.F_OK)
         print("path %x access = %d" % (download_path, access))
 
