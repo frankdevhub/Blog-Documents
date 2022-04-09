@@ -65,6 +65,8 @@ class Blog51CTO:
             # 获取页面分页控件对象
             next_page = "//ul[@class='pagination']/li[@class='next']/a"
             exist = self._wait.until(EC.visibility_of(self._web_driver.find_element(By.XPATH, next_page)))
+            print(f'exist = {exist}')
+
             if exist is True:
                 next_btn = self._web_driver.find_element(next_page)
                 next_href = next_btn.find_element('href')
@@ -86,7 +88,7 @@ class Blog51CTO:
         self._web_driver.execute_script(js_bottom2)
         time.sleep(1)
         # 博客列表页Xpath: //div[@class='common-article-list']
-        doc_list = self._web_driver.find_elements(By.XPATH, "//div[@class='common-article-list']")
+        doc_list = self._wait.until(EC.presence_of_element_located((By.XPATH, "//div[@class='common-article-list']")))
 
         # 页面列表对象内的文档对象的链接集合
         link_dict = []
