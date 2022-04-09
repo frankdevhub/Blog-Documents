@@ -8,8 +8,11 @@
 """
 import logging as log
 import os
+import time
 
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -33,7 +36,7 @@ js_bottom1 = 'var q=document.documentElement.scrollTop=10000'
 js_bottom2 = 'window.scrollTo(0,document.body.scrollHeight)'
 js_bottom3 = 'window.scrollTo(0,4890)'
 # 关键字
-blog_home_title = '51cto'
+blog_home_title = 'oldboy'
 
 log.basicConfig(level=log.INFO)
 
@@ -50,14 +53,15 @@ class Blog51CTO:
         base_url = self._url
         print(f'url = {base_url}')
 
-        self._web_driver = webdriver.Chrome(self._driver)
+        s = Service(self._driver)
+        self._web_driver = webdriver.Chrome(service=s)
         self._web_driver.implicitly_wait(10)
         self._web_driver.maximize_window()
         self._wait = WebDriverWait(self._web_driver, 10)
 
         _link = blog_home
         while _link is not None:
-            self.scratch_docs(self, _link)
+            self.scratch_docs(_link)
             # 获取页面分页控件对象
             next_page = "//ul[@class='pagination']/li[@class='next']/a"
             exist = self._wait.until(EC.visibility_of(self._web_driver.find_element(By.XPATH, next_page)))
@@ -80,9 +84,9 @@ class Blog51CTO:
         time.sleep(1)
         # 滚动到页面最底部等待列表页面dom树加载完成
         self._web_driver.execute_script(js_bottom2)
-        timeout.sleep(1)
+        time.sleep(1)
         # 博客列表页Xpath: //div[@class='common-article-list']
-        doc_list = driver.find_elements(By.XPATH, "//div[@class='common-article-list']")
+        doc_list = self._web_driver.find_elements(By.XPATH, "//div[@class='common-article-list']")
 
         # 页面列表对象内的文档对象的链接集合
         link_dict = []
