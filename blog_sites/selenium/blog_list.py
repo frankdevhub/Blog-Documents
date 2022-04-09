@@ -23,7 +23,7 @@ test_headers = {
 }
 
 # 测试链接地址
-site_domain = 'https://blog.51cto.com/'  # 测试链接域名
+site_domain = 'https://blog.51cto.com/'
 blog_home = 'https://blog.51cto.com/oldboy'
 # chromedriver浏览器驱动路径
 driver_path = 'D://frankdevhub-workspace/chrome-driver/chromedriver.exe'
@@ -39,6 +39,7 @@ js_bottom3 = 'window.scrollTo(0,4890)'
 blog_home_title = 'oldboy'
 
 log.basicConfig(level=log.INFO)
+
 
 class Blog51CTO:
 
@@ -72,10 +73,13 @@ class Blog51CTO:
                 next_href = next_btn.find_element('href')
                 assert next_href is not None, 'variable next_href cannot be none'
                 print(f'next_href = {next_href}')
-                _link = nxt_href
+                _link = next_href
 
             else:
-                next_btn
+                driver_link = self._web_driver.current_url
+                print(f'process end, last page = {driver_link}')
+                os.system(init_cmd)
+                print('shutdown')
 
     def scratch_docs(self, link):
         log.debug('invoke method -> scratch_docs()')
@@ -87,16 +91,20 @@ class Blog51CTO:
         # 滚动到页面最底部等待列表页面dom树加载完成
         self._web_driver.execute_script(js_bottom2)
         time.sleep(1)
-        # 博客列表页Xpath: //div[@class='common-article-list']
-        doc_list = self._wait.until(EC.presence_of_element_located((By.XPATH, "//div[@class='common-article-list']")))
+        list_xpath = "//div[@class='common-article-list']"
+        self._wait.until(EC.presence_of_element_located((By.XPATH, list_xpath)))
+        doc_list = self._web_driver.find_elements(By.XPATH, list_xpath)
+        assert doc_list is not None, 'variable doc_list cannot be none'
+        print("doc_list size = %d" % len(doc_list))
 
         # 页面列表对象内的文档对象的链接集合
         link_dict = []
         driver_link = self._web_driver.current_url
         print(f'driver_link = {driver_link}')
 
-        for article in doc_list:
-            href = article.find_element(By.XPATH, "//h3[@class='title']/a")
+        for i in range(1, len(doc_list)):
+            article = doc_list[i - 1]
+            href = article.find_element(By.XPATH, "div[1]/h3[@class='title']/a")
             doc_link = href.get_attribute('href')
             print(f'doc_link = {doc_link}')
 
@@ -117,5 +125,13 @@ class Blog51CTO:
 
 
 if __name__ == '__main__':
-    scanner = Blog51CTO()
-    scanner.scratch_pages()
+    init_cmd = "taskkill /im chrome.exe /F"
+    print("running command: %s", init_cmd)
+    os.system(init_cmd)
+    print('process start...')
+    try:
+        scanner = Blog51CTO()
+        scanner.scratch_pages()
+    except:
+        os.system(init_cmd)
+        print('shutdown')
